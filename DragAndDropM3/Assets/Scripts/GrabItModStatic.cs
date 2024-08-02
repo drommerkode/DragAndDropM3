@@ -1,5 +1,4 @@
-﻿using UnityEditor.PackageManager;
-using UnityEngine;
+﻿using UnityEngine;
 
 [System.Serializable]
 public class GrabObjectProperties{
@@ -13,7 +12,6 @@ public class GrabItModStatic : MonoBehaviour {
 
 	[Header("Grab properties")]
 	[SerializeField, Range(4,50)] private float grabSpeed = 7;
-	[SerializeField, Range(0.1f ,5)] private float grabMinDistance = 1;
 	[SerializeField, Range(4 ,25)] private float grabMaxDistance = 10;
 
 	[Header("Affected Rigidbody Properties")]
@@ -30,6 +28,7 @@ public class GrabItModStatic : MonoBehaviour {
 
     private Vector3 targetPos;
     private GameObject hitPointObject;
+	private Item curItem;
 
     private bool grabbing = false;
 	private bool isHingeJoint = false;
@@ -50,26 +49,32 @@ public class GrabItModStatic : MonoBehaviour {
                 targetRB.constraints = grabProperties.constraints;
             }
 
-			if( Input.GetMouseButtonUp(0) ) {				
-				Reset();
-				grabbing = false;
-			}
+			if( Input.GetMouseButtonUp(0) ) {
+                curItem.SetGraber(null);
+                StopGrab();
+            }
 		}
 		else {
 			if(Input.GetMouseButtonDown(0))	{
 				RaycastHit hitInfo;
-
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hitInfo, grabMaxDistance)) {
-					Rigidbody rb = hitInfo.collider.GetComponent<Rigidbody>();
-					if(rb != null){							
-						Set( rb , hitInfo.distance);						
-						grabbing = true;
-					}
-				}
+					if (hitInfo.collider.TryGetComponent<Rigidbody>(out Rigidbody rb)) {
+                        GrabStart(rb, hitInfo.distance);
+                        grabbing = true;
+                    }
+                    if (hitInfo.collider.TryGetComponent<Item>(out curItem)) {
+                        curItem.SetGraber(this);
+                    }
+                }
 			}
 		}
 	}
+
+	public void StopGrab() {
+        Reset();
+        grabbing = false;
+    }
 
 	private void SetTargetPosition() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -78,7 +83,7 @@ public class GrabItModStatic : MonoBehaviour {
         }
     }
 	
-	void Set(Rigidbody _target , float _distance) {	
+	void GrabStart(Rigidbody _target , float _distance) {	
 		targetRB = _target;
 		isHingeJoint = _target.GetComponent<HingeJoint>() != null;		
 
