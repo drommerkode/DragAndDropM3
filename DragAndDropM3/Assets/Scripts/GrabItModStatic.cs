@@ -1,0 +1,136 @@
+﻿using UnityEditor.PackageManager;
+using UnityEngine;
+
+[System.Serializable]
+public class GrabObjectProperties{
+	public bool useGravity = false;
+	public float drag = 10;
+	public float angularDrag = 10;
+	public RigidbodyConstraints constraints = RigidbodyConstraints.FreezeRotation;		
+}
+
+public class GrabItModStatic : MonoBehaviour {
+
+	[Header("Grab properties")]
+	[SerializeField, Range(4,50)] private float grabSpeed = 7;
+	[SerializeField, Range(0.1f ,5)] private float grabMinDistance = 1;
+	[SerializeField, Range(4 ,25)] private float grabMaxDistance = 10;
+
+	[Header("Affected Rigidbody Properties")]
+	[SerializeField] private GrabObjectProperties grabProperties = new GrabObjectProperties();
+
+    private GrabObjectProperties defaultProperties = new GrabObjectProperties();
+
+	[Header("Layers")]
+	[SerializeField] private LayerMask maskItem;
+    [SerializeField] private LayerMask maskGround;
+
+    private Rigidbody targetRB = null;
+    private Transform cameraTransform;
+
+    private Vector3 targetPos;
+    private GameObject hitPointObject;
+
+    private bool grabbing = false;
+	private bool isHingeJoint = false;
+
+    private LineRenderer lineRenderer;
+
+	void Awake() {
+        cameraTransform = base.transform;
+		hitPointObject = new GameObject("Point");
+		lineRenderer = GetComponent<LineRenderer>();
+	}
+
+	void Update() {
+		if(grabbing) {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			if (Physics.Raycast(ray, out RaycastHit hitInfo, grabMaxDistance, maskGround)) {
+                targetPos = hitInfo.point;
+            }
+
+            if (!isHingeJoint) {
+                targetRB.constraints = grabProperties.constraints;
+            }
+
+			if( Input.GetMouseButtonUp(0) ) {				
+				Reset();
+				grabbing = false;
+			}
+		}
+		else {
+			if(Input.GetMouseButtonDown(0))	{
+				RaycastHit hitInfo;
+
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hitInfo, grabMaxDistance)) {
+					Rigidbody rb = hitInfo.collider.GetComponent<Rigidbody>();
+					if(rb != null){							
+						Set( rb , hitInfo.distance);						
+						grabbing = true;
+					}
+				}
+			}
+		}
+	}
+	
+	void Set(Rigidbody _target , float _distance) {	
+		targetRB = _target;
+		isHingeJoint = _target.GetComponent<HingeJoint>() != null;		
+
+		//Rigidbody default properties	
+		defaultProperties.useGravity = targetRB.useGravity;	
+		defaultProperties.drag = targetRB.drag;
+		defaultProperties.angularDrag = targetRB.angularDrag;
+        defaultProperties.constraints = targetRB.constraints;
+
+		//Grab Properties	
+		targetRB.useGravity = grabProperties.useGravity;
+		targetRB.drag = grabProperties.drag;
+		targetRB.angularDrag = grabProperties.angularDrag;
+        targetRB.constraints = isHingeJoint? RigidbodyConstraints.None : grabProperties.constraints;
+
+        hitPointObject.transform.SetParent(_target.transform);							
+
+		//targetDistance = _distance;
+		//targetPos = cameraTransform.position + cameraTransform.forward * targetDistance;
+
+		hitPointObject.transform.position = targetPos;
+		hitPointObject.transform.LookAt(cameraTransform);
+				
+	}
+
+	void Reset() {		
+		//Grab Properties	
+		targetRB.useGravity = defaultProperties.useGravity;
+		targetRB.drag = defaultProperties.drag;
+		targetRB.angularDrag = defaultProperties.angularDrag;
+        targetRB.constraints = defaultProperties.constraints;
+        targetRB = null;
+		hitPointObject.transform.SetParent(null);
+
+		if(lineRenderer != null)
+			lineRenderer.enabled = false;
+	}
+
+	void Grab() {
+		Vector3 hitPointPos = hitPointObject.transform.position;
+		Vector3 dif = targetPos - hitPointPos;
+
+		if (isHingeJoint) {
+			targetRB.AddForceAtPosition(grabSpeed * dif * 100, hitPointPos, ForceMode.Force);
+		} else {
+            targetRB.velocity = grabSpeed * dif;
+        }	
+
+		if(lineRenderer != null){
+			lineRenderer.enabled = true;
+			lineRenderer.SetPositions( new Vector3[]{ targetPos , hitPointPos });
+		}
+	}
+	
+	void FixedUpdate() {
+		if (!grabbing) { return; }
+		Grab();		
+	}
+}
