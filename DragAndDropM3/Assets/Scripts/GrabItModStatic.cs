@@ -50,7 +50,7 @@ public class GrabItModStatic : MonoBehaviour {
             }
 
 			if( Input.GetMouseButtonUp(0) ) {
-                curItem.SetGraber(null);
+                curItem.graber = null;
                 StopGrab();
             }
 		}
@@ -64,7 +64,7 @@ public class GrabItModStatic : MonoBehaviour {
                         grabbing = true;
                     }
                     if (hitInfo.collider.TryGetComponent<Item>(out curItem)) {
-                        curItem.SetGraber(this);
+                        curItem.graber = this;
                     }
                 }
 			}
