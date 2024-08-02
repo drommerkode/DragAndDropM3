@@ -44,10 +44,7 @@ public class GrabItModStatic : MonoBehaviour {
 
 	void Update() {
 		if(grabbing) {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			if (Physics.Raycast(ray, out RaycastHit hitInfo, grabMaxDistance, maskGround)) {
-                targetPos = hitInfo.point;
-            }
+            SetTargetPosition();
 
             if (!isHingeJoint) {
                 targetRB.constraints = grabProperties.constraints;
@@ -73,6 +70,13 @@ public class GrabItModStatic : MonoBehaviour {
 			}
 		}
 	}
+
+	private void SetTargetPosition() {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, grabMaxDistance, maskGround)) {
+            targetPos = hitInfo.point;
+        }
+    }
 	
 	void Set(Rigidbody _target , float _distance) {	
 		targetRB = _target;
@@ -90,12 +94,11 @@ public class GrabItModStatic : MonoBehaviour {
 		targetRB.angularDrag = grabProperties.angularDrag;
         targetRB.constraints = isHingeJoint? RigidbodyConstraints.None : grabProperties.constraints;
 
-        hitPointObject.transform.SetParent(_target.transform);							
+        hitPointObject.transform.SetParent(_target.transform);
 
-		//targetDistance = _distance;
-		//targetPos = cameraTransform.position + cameraTransform.forward * targetDistance;
+		SetTargetPosition();
 
-		hitPointObject.transform.position = targetPos;
+        hitPointObject.transform.position = targetPos;
 		hitPointObject.transform.LookAt(cameraTransform);
 				
 	}
