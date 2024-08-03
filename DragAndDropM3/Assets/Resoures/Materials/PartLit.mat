@@ -211,7 +211,7 @@ Material:
     - _FlipbookMode: 0
     - _Gloss: 0.5
     - _GlossMapScale: 0
-    - _Glossiness: 0.48
+    - _Glossiness: 0
     - _GlossinessSource: 0
     - _GlossyReflections: 0
     - _LightingEnabled: 1
