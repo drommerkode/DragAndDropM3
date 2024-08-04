@@ -256,6 +256,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI_Back
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 1170
+        width: 96
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85abb9751a376664d98fa1198fe57fe0
+      internalID: 2744512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Home
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 1170
+        width: 96
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166fa3dbf7eeb4f4196f2f29df0804db
+      internalID: -674448062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Yes
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1170
+        width: 96
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba128d5d8b569b458ce2ca313667104
+      internalID: 483659638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_No
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 1170
+        width: 96
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4202c6db935db264194d638baf63451c
+      internalID: 40921282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_ProgressBack
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1090
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 28, y: 32, z: 28, w: 29}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d6b1643d8149dd4fa6aef5cbb92034b
+      internalID: -2015968568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Progress
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 1102
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 24, z: 25, w: 24}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d237931b2675984a89a20525230e4b5
+      internalID: 142739070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -269,12 +395,18 @@ TextureImporter:
     nameFileIdTable:
       UI_2: 1159290048
       UI_Auth: -1257932286
+      UI_Back: 2744512
       UI_But: -79213318
       UI_En: 1505648951
+      UI_Home: -674448062
+      UI_No: 40921282
       UI_Pause: 982914122
       UI_Play: -339224578
+      UI_Progress: 142739070
+      UI_ProgressBack: -2015968568
       UI_Ru: 1740524991
       UI_Settings: 1390023276
+      UI_Yes: 483659638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

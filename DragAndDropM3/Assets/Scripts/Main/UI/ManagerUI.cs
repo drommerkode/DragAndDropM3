@@ -89,7 +89,7 @@ public class ManagerUI : MonoBehaviour {
                                                     authMenu,
                                                     rateMenu,
                                                 };
-        if (!ManagerScenes.GetIsLogo()) { 
+        if (ManagerScenes.GetIsLevel()) { 
             GoLoadingMenu();
         }
     }
@@ -336,7 +336,7 @@ public class ManagerUI : MonoBehaviour {
 
     private void GoLogo() {
         DeactiveAllUI();
-        //fullFade.SetActive(true);
+        fullFade.SetActive(true);
         logoMenu.SetActive(true);
         menuState = MenuState.logoMenu;
     }
