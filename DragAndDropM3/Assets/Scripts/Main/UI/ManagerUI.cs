@@ -110,7 +110,7 @@ public class ManagerUI : MonoBehaviour {
         if (ManagerScenes.GetIsMainMenu()) {
             SetLoadingUserData();
             GoMainMenu();
-            StartCoroutine(HideLoadingMenuCoroutine());
+            //StartCoroutine(HideLoadingMenuCoroutine());
             return;
         }
 
