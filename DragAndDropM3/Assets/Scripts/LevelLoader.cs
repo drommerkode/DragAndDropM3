@@ -3,19 +3,26 @@ using UnityEngine;
 
 public class LevelLoader : MonoBehaviour
 {
-    public void Init()
-    {
-        /*GameObject[] levels = ManagerGame.instance.GetLevels();
-        if (levels.Length == 0) { return; }
-        int ln = Mathf.Clamp(ManagerGame.instance.GetCurLevel(), 0, levels.Length - 1);
-        ManagerGame.instance.SetCurLevel(ln);
-        GameObject newLevel = Instantiate(levels[ln]);
-        LevelStarter ls = newLevel.GetComponent<LevelStarter>();
-        StartCoroutine(LevelStartCoroutine(ls));*/
+    [SerializeField] private int levelNum;
+    [SerializeField] private int itemsVariants = 10;
+    [SerializeField] private LevelType levelType;
+    [SerializeField] private GameObject level;
+
+    private enum LevelType {
+        spring,
+        sand,
+        summer,
+        volcano,
+        fall,
+        candy,
+        winter,
+        castle
     }
 
-    private IEnumerator LevelStartCoroutine(LevelStarter _ls) {
-        yield return new WaitForSecondsRealtime(ManagerGame.instance.GetBootDelayTime());
-        _ls.Init();
+    public void Init() {
+        GameObject l = Instantiate(level);
+        ManagerItem mi = l.GetComponent<ManagerItem>();
+        mi.Init(itemsVariants);
+        //ManagerGame.instance.LevelLoaded();
     }
 }

@@ -21,8 +21,7 @@ public class ManagerGame : MonoBehaviour {
     [SerializeField] private SoundsForPlay mainMusic;
 
     [Header("Times")]
-    [SerializeField] private float bootDelay = 0.5f;
-    [SerializeField] private float loadingDelay = 1f;
+    [SerializeField] private float bootDelay = 0.2f;
 
     //ADV
     private ADV adv;
@@ -43,6 +42,7 @@ public class ManagerGame : MonoBehaviour {
     public static UnityEvent OnSceneLoading = new UnityEvent();
     public static UnityEvent<int> OnStartChangeLanguage = new UnityEvent<int>();
 
+    public static UnityEvent OnLevelLoaded = new UnityEvent();
     public static UnityEvent OnShowLevelResult = new UnityEvent();
     public static UnityEvent OnLevelCompleted = new UnityEvent();
     public static UnityEvent OnLevelFailed = new UnityEvent();
@@ -81,10 +81,6 @@ public class ManagerGame : MonoBehaviour {
         return bootDelay;
     }
 
-    public float GetBootLoadingTime() {
-        return loadingDelay;
-    }
-
     #region Events
     public void ChangeCursorState(CursorLockMode _cursorLockMode) {
         if (!isMobile) {
@@ -93,6 +89,10 @@ public class ManagerGame : MonoBehaviour {
         else {
             Cursor.lockState = CursorLockMode.None;
         }
+    }
+
+    public void LevelLoaded() {
+        OnLevelLoaded.Invoke();
     }
 
     private void LevelResult() {

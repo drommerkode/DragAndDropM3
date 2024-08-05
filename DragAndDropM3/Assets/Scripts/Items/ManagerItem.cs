@@ -1,59 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ManagerItem : MonoBehaviour
 {
 
-    [SerializeField] private int allCount = 20;
-    [SerializeField] private int spawnCount = 10;
-    [SerializeField] private float spawnTime = 0.5f;
+    [SerializeField] private int allVariants = 20;
     [SerializeField] private Item item;
-    [SerializeField] private ParticleSystem partCreate;
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private List<ItemConfiguration> itemConfs = new List<ItemConfiguration>();
     [SerializeField] private List<ItemConfiguration> spawnConfs = new List<ItemConfiguration>();
     [SerializeField] private int curCount = 0;
 
-    private void Start() {
+    public void Init(int _allVariants) {
+        allVariants = _allVariants;
+        allVariants = Mathf.Clamp(allVariants, 0, itemConfs.Count);
         SpawnItems();
     }
 
     private void SpawnItems() {
-        int curSpawnConf = 0;
-        int itenConfNum;
-        spawnConfs.Clear();
-        while (curSpawnConf < spawnCount) {
-            itenConfNum = Random.Range(0, itemConfs.Count);
-            spawnConfs.Add(itemConfs[itenConfNum]);
-            spawnConfs.Add(itemConfs[itenConfNum]);
-            curSpawnConf += 2;
+
+        Shuffle(itemConfs);
+        int spawnCOunt = allVariants * 2;
+        for (int i = 0; i < allVariants; i++) {
+            spawnConfs.Add(itemConfs[i]);
+            spawnConfs.Add(itemConfs[i]);
         }
         Shuffle(spawnConfs);
-        StartCoroutine(SpawnCoroutine());
-    }
 
-    private IEnumerator SpawnCoroutine() {
-        WaitForSeconds wfs = new WaitForSeconds(spawnTime);
         int pointNum;
-        for (int i = 0; i < spawnCount; i++) {
+        for (int i = 0; i < spawnCOunt; i++) {
             pointNum = Random.Range(0, spawnPoints.Count);
             Item itm = Instantiate(item, spawnPoints[pointNum].position, Quaternion.identity);
             itm.itemConfiguration = spawnConfs[i];
             itm.managerItem = this;
             itm.Spawn();
             curCount++;
-            
-            Instantiate(partCreate, spawnPoints[pointNum].position, Quaternion.identity);
-            
-            yield return wfs;
         }
+        ManagerGame.instance.LevelLoaded();
     }
 
     public void DestroyItem() {
-        allCount--;
+        allVariants--;
         curCount--;
-        if (allCount > 0) {
+        if (allVariants > 0) {
             if (curCount <= 0) {
                 SpawnItems();
             }

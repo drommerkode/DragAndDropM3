@@ -10,12 +10,17 @@ public class Item : MonoBehaviour
     [SerializeField] private ParticleSystem partDestroy;
     [HideInInspector] public GrabItModStatic graber;
     [HideInInspector] public ManagerItem managerItem;
-    private bool canMerge = true;
+    private bool canMerge = false;
 
     private void Awake() {
         meshFilter = GetComponent<MeshFilter>();
         meshCollider = GetComponent<MeshCollider>();
+        ManagerGame.OnLevelLoaded.AddListener(Activate);
         Spawn();
+    }
+
+    private void Activate() {
+        canMerge = true;
     }
 
     public void Spawn() {

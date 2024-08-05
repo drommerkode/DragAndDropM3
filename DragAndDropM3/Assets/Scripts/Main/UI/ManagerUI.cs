@@ -68,6 +68,7 @@ public class ManagerUI : MonoBehaviour {
         ManagerGame.OnShowADV.AddListener(ShowADV);
         ManagerGame.OnLoadUserData.AddListener(SetLoadingUserData);
         ManagerGame.OnSceneLoading.AddListener(GoLoadingMenu);
+        ManagerGame.OnLevelLoaded.AddListener(HideLoadingMenuOnLevelLoaded);
         ManagerGame.OnShowLevelResult.AddListener(GoResultMenu);
         ManagerGame.OnLevelCompleted.AddListener(GoСompletedMenu);
         ManagerGame.OnLevelFailed.AddListener(GoFailedMenu);
@@ -110,7 +111,6 @@ public class ManagerUI : MonoBehaviour {
         if (ManagerScenes.GetIsMainMenu()) {
             SetLoadingUserData();
             GoMainMenu();
-            //StartCoroutine(HideLoadingMenuCoroutine());
             return;
         }
 
@@ -134,11 +134,9 @@ public class ManagerUI : MonoBehaviour {
         }
 
         SetLoadingUserData();
-        StartCoroutine(HideLoadingMenuCoroutine());
     }
 
-    private IEnumerator HideLoadingMenuCoroutine() {
-        yield return new WaitForSecondsRealtime(ManagerGame.instance.GetBootLoadingTime());
+    private void HideLoadingMenuOnLevelLoaded() {
         HideLoadingMenu();
         if (menuState != MenuState.tutorialMenu) {
             ManagerGame.instance.SetPause(false);
@@ -397,7 +395,6 @@ public class ManagerUI : MonoBehaviour {
 
     #region Shadows
     public void ShadowOnOff(bool _value) {
-        PressSound();
         ManagerGame.instance.ShadowOnOff(_value);
     }
     
