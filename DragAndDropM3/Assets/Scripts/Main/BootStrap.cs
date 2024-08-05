@@ -27,6 +27,6 @@ public class BootStrap : MonoBehaviour {
         }
 
         managerUI?.Init();
-        levelLoader?.Init();
+        levelLoader?.Init(managerUI);
     }
 }

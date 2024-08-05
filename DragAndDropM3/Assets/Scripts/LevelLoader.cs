@@ -19,10 +19,10 @@ public class LevelLoader : MonoBehaviour
         castle
     }
 
-    public void Init() {
+    public void Init(ManagerUI _managerUI) {
         GameObject l = Instantiate(level);
         ManagerItem mi = l.GetComponent<ManagerItem>();
-        mi.Init(itemsVariants);
+        mi.Init(itemsVariants, _managerUI);
         //ManagerGame.instance.LevelLoaded();
     }
 }

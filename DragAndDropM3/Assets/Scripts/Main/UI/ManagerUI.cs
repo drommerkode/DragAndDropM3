@@ -38,6 +38,9 @@ public class ManagerUI : MonoBehaviour {
 
     [Header("Tutorial")]
 
+    [Header("Score")]
+    [SerializeField] private TextMeshProUGUI inGameScore;
+
     [Header("ResultMenu")]
     [SerializeField] private GameObject buttonNext;
     [SerializeField] private GameObject buttonSkip;
@@ -217,6 +220,12 @@ public class ManagerUI : MonoBehaviour {
     public void PressSound() {
         soundPress.PlaySound();
     }
+
+    #region GameScoreResults
+    public void SetInGameScore(int _count) {
+        inGameScore.text = _count.ToString();
+    }
+    #endregion
 
     #region DEACTIVATE
     private void DeactiveAllUI() {

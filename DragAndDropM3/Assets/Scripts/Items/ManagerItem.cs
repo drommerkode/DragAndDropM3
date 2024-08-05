@@ -12,9 +12,16 @@ public class ManagerItem : MonoBehaviour
     [SerializeField] private List<ItemConfiguration> itemConfs = new List<ItemConfiguration>();
     [SerializeField] private List<ItemConfiguration> spawnConfs = new List<ItemConfiguration>();
     [SerializeField] private int curCount = 0;
+    private int curScore;
 
-    public void Init(int _allVariants) {
+    ManagerUI managerUI;
+
+    public void Init(int _allVariants, ManagerUI _managerUI) {
         allVariants = _allVariants;
+        managerUI = _managerUI;
+
+        managerUI.SetInGameScore(0);
+
         allVariants = Mathf.Clamp(allVariants, 0, itemConfs.Count);
         SpawnItems();
     }
@@ -42,12 +49,12 @@ public class ManagerItem : MonoBehaviour
     }
 
     public void DestroyItem() {
-        allVariants--;
+        curScore = curScore + 1;// + mod
+        managerUI.SetInGameScore(curScore);
+
         curCount--;
-        if (allVariants > 0) {
-            if (curCount <= 0) {
-                SpawnItems();
-            }
+        if (curCount <= 0) {
+            ManagerGame.instance.LevelCompleted();
         }
     }
 
