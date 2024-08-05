@@ -382,6 +382,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI_Bar
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1060
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 48, z: 48, w: 50}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfafa3459c5f67d42a7ddaa4f83ca833
+      internalID: 1951427525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Coin
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1060
+        width: 96
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e04738a20b5e1c42adbeec7616d532e
+      internalID: -88863087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Restart
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1060
+        width: 96
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b50f9e6c4183b48ab9e26daa50562f
+      internalID: -627449512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_ADV
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1060
+        width: 96
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672c609ed7681b64e95e8e14770e8452
+      internalID: 694639250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -394,9 +478,12 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       UI_2: 1159290048
+      UI_ADV: 694639250
       UI_Auth: -1257932286
       UI_Back: 2744512
+      UI_Bar: 1951427525
       UI_But: -79213318
+      UI_Coin: -88863087
       UI_En: 1505648951
       UI_Home: -674448062
       UI_No: 40921282
@@ -404,6 +491,7 @@ TextureImporter:
       UI_Play: -339224578
       UI_Progress: 142739070
       UI_ProgressBack: -2015968568
+      UI_Restart: -627449512
       UI_Ru: 1740524991
       UI_Settings: 1390023276
       UI_Yes: 483659638
