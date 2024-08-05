@@ -244,7 +244,7 @@ public class ManagerUI : MonoBehaviour {
             mainMenu.SetActive(true);
             menuState = MenuState.mainMenu;
         }
-        ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
+        //ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
         ManagerGame.instance.GameplayStop();
     }
 
@@ -259,7 +259,7 @@ public class ManagerUI : MonoBehaviour {
             menuState = MenuState.inGameMenu;
             ManagerGame.instance.SetPause(false);
             ManagerGame.instance.SetPauseADV(false);
-            ManagerGame.instance.ChangeCursorState(CursorLockMode.Locked);
+            //ManagerGame.instance.ChangeCursorState(CursorLockMode.Locked);
             ManagerGame.instance.GameplayStart();
         }
     }
@@ -288,7 +288,7 @@ public class ManagerUI : MonoBehaviour {
         halfFade.SetActive(true);
         pauseMenu.SetActive(true);
         menuState = MenuState.pauseMenu;
-        ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
+        //ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
     }
 
     public void GoResultMenu() {
@@ -298,7 +298,7 @@ public class ManagerUI : MonoBehaviour {
         halfFade.SetActive(true);
         resultMenu.SetActive(true);
         menuState = MenuState.resultMenu;
-        ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
+        //ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
         ManagerGame.instance.GameplayStop();
     }
 
@@ -397,6 +397,7 @@ public class ManagerUI : MonoBehaviour {
 
     #region Shadows
     public void ShadowOnOff(bool _value) {
+        PressSound();
         ManagerGame.instance.ShadowOnOff(_value);
     }
     
