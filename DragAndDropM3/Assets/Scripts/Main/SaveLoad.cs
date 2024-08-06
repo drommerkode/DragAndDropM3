@@ -37,7 +37,6 @@ public class SaveLoad : MonoBehaviour
         public bool shadowEnable = true;
 
         public int levelsOpened = 1;
-        public int lastCar = 0;
-        public bool isSteerWheel = false;
+        public int score = 1;
     }
 }

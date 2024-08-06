@@ -4,8 +4,8 @@ using UnityEngine;
 public class BootStrap : MonoBehaviour {
 
     [SerializeField] private ManagerUI managerUI;
-
     [SerializeField] private LevelLoader levelLoader;
+    [SerializeField] private LevelMenuCreate levelMenuCreate;
 
     private void Start() {
         StartCoroutine(BootCoroutine());
@@ -26,7 +26,13 @@ public class BootStrap : MonoBehaviour {
             fgo?.TryGetComponent<LevelLoader>(out levelLoader);
         }
 
+        if (levelMenuCreate == null) {
+            fgo = GameObject.FindGameObjectWithTag(Global.TAG_LevelMenuCreate);
+            fgo?.TryGetComponent<LevelMenuCreate>(out levelMenuCreate);
+        }
+
         managerUI?.Init();
         levelLoader?.Init(managerUI);
+        //levelMenuCreate?.Init();
     }
 }

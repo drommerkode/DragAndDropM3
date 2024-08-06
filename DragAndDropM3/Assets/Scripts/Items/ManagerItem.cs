@@ -54,6 +54,7 @@ public class ManagerItem : MonoBehaviour
 
         curCount--;
         if (curCount <= 0) {
+            SaveLoad.saveData.score += curScore;
             ManagerGame.instance.LevelCompleted();
         }
     }

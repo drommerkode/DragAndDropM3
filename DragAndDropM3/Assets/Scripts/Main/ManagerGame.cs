@@ -26,6 +26,9 @@ public class ManagerGame : MonoBehaviour {
     //ADV
     private ADV adv;
 
+    //game
+    private int curLevel;
+
     #region FOR_SAVE
     // save if need
     private int languageNumber = -1;
@@ -46,6 +49,8 @@ public class ManagerGame : MonoBehaviour {
     public static UnityEvent OnShowLevelResult = new UnityEvent();
     public static UnityEvent OnLevelCompleted = new UnityEvent();
     public static UnityEvent OnLevelFailed = new UnityEvent();
+
+    public static UnityEvent<bool> OnShowLevelMenu = new UnityEvent<bool>();
     #endregion
 
     public static ManagerGame instance { get; private set; }
@@ -81,6 +86,18 @@ public class ManagerGame : MonoBehaviour {
         return bootDelay;
     }
 
+    public int GetCurLevel() {
+        return curLevel;
+    }
+
+    public void SetCurLevelNext() {
+        curLevel++;
+    }
+
+    public void SetCurLevel(int _curLevel) {
+        curLevel = _curLevel;
+    }
+
     #region Events
     public void ChangeCursorState(CursorLockMode _cursorLockMode) {
         if (!isMobile) {
@@ -102,7 +119,10 @@ public class ManagerGame : MonoBehaviour {
 
     public void LevelCompleted() {
         //levelCompleteSound.PlaySound();
-        saveData.levelsOpened++;
+        if (curLevel == saveData.levelsOpened) {
+            saveData.levelsOpened++;
+        }
+        Debug.Log("curLevel - " + curLevel + " | " + "levelsOpened - " + saveData.levelsOpened);
         SaveUserData();
         OnLevelCompleted.Invoke();
         StartCoroutine(ShowLevelResultCoroutione());
@@ -138,6 +158,10 @@ public class ManagerGame : MonoBehaviour {
         else {
             QualitySettings.shadows = ShadowQuality.Disable;
         }
+    }
+
+    public void ShowLevelMenu(bool _value) {
+        OnShowLevelMenu.Invoke(_value);
     }
 
     #endregion

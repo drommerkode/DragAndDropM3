@@ -194,6 +194,7 @@ public class ManagerUI : MonoBehaviour {
                 GoPauseMenu();
                 break;
             case MenuState.authMenu:
+            case MenuState.levelMenu:
                 GoMainMenu();
                 break;
             case MenuState.rateMenu:
@@ -213,6 +214,7 @@ public class ManagerUI : MonoBehaviour {
     }
 
     public void LevelNext() {
+        ManagerGame.instance.SetCurLevel(saveData.levelsOpened);
         ManagerGame.instance.ShowCommonADV();
         ManagerScenes.GoLevel();
     }
@@ -249,6 +251,7 @@ public class ManagerUI : MonoBehaviour {
             DeactiveAllUI();
             DeactiveAllFade();
             mainMenu.SetActive(true);
+            ManagerGame.instance.ShowLevelMenu(false);
             menuState = MenuState.mainMenu;
         }
         //ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
@@ -270,10 +273,17 @@ public class ManagerUI : MonoBehaviour {
             ManagerGame.instance.GameplayStart();
         }
     }
+    public void GoLevelMenu() {
+        PressSound();
+        DeactiveAllUI();
+        levelMenu.SetActive(true);
+        ManagerGame.instance.ShowLevelMenu(true);
+        menuState = MenuState.levelMenu;
+    }
 
     public void GoTutorial() {
         ManagerGame.instance.SetPause(true);
-        ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
+        //ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
         halfFade.SetActive(true);
         tutorialMenu.SetActive(true);
         menuState = MenuState.tutorialMenu;

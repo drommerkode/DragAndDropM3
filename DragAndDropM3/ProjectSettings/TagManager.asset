@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ManagerUI
   - LevelLoader
+  - LevelMenuCreate
   layers:
   - Default
   - TransparentFX
