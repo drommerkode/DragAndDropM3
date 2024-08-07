@@ -27,15 +27,18 @@ public class LevelMenuCreate : MonoBehaviour
     public void Init() {
         int openedLevel = SaveLoad.saveData.levelsOpened;
         int curLevelMenuType = (openedLevel - 1) / levelCountsPerWorld;
+        int zOfsetPerLevel = (openedLevel - 1) % levelCountsPerWorld;
 
         for (int i = 0; i < levelMenusCount; i++) {
-            int levelMenuType = curLevelMenuType + i;
+            int levelMenuType = curLevelMenuType + i - 1;
             int levelMenuTypeDiv = levelMenuType / levelMenuTypes.Count;
             int levelMenuTypeAfterCycle = levelMenuType - levelMenuTypeDiv * levelMenuTypes.Count;
 
-            WorldMenuType wmt = Instantiate(levelMenuTypes[levelMenuTypeAfterCycle], levelMenuObjects.transform);
-            wmt.transform.position = new Vector3(0, 0, i * levelMenuTypeZSize);
-            wmt.Init(levelMenuType * levelCountsPerWorld);
+            if (levelMenuTypeAfterCycle >= 0) {
+                WorldMenuType wmt = Instantiate(levelMenuTypes[levelMenuTypeAfterCycle], levelMenuObjects.transform);
+                wmt.transform.position = new Vector3(0, 0, (i - 1) * levelMenuTypeZSize - zOffset * zOfsetPerLevel);
+                wmt.Init(levelMenuType * levelCountsPerWorld);
+            }
         }
         menuCreated = true;
     }
