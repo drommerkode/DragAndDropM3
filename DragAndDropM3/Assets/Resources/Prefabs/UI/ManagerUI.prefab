@@ -1682,9 +1682,9 @@ RectTransform:
   - {fileID: 5080308383459852847}
   m_Father: {fileID: 348966759438377927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1617657804957949231
@@ -2655,7 +2655,7 @@ GameObject:
   - component: {fileID: 7581269529461872487}
   - component: {fileID: 9055251471012555835}
   m_Layer: 5
-  m_Name: CoinText
+  m_Name: CoinTextInGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2675,9 +2675,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 348966759438377927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 304, y: -50}
   m_SizeDelta: {x: 376, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7581269529461872487
@@ -5046,7 +5046,7 @@ GameObject:
   - component: {fileID: 7192529603050857777}
   - component: {fileID: 2515585423681892711}
   m_Layer: 5
-  m_Name: CoinText
+  m_Name: CoinTextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6660,8 +6660,9 @@ MonoBehaviour:
   sliderMusic: {fileID: 4633148672621525382}
   sliderSFX: {fileID: 1770265649081803368}
   shadowToggle: {fileID: 6277156029347001648}
-  inGameScore: {fileID: 9055251471012555835}
-  scoreReactInGame: {fileID: 0}
+  scoreInGame: {fileID: 9055251471012555835}
+  scoreReactInGame: {fileID: 9119519937051194986}
+  scoreLevelMenu: {fileID: 2515585423681892711}
   buttonNext: {fileID: 7070979962381065064}
   buttonSkip: {fileID: 5436097962956071573}
 --- !u!223 &7077428474085890467
@@ -7369,6 +7370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348966759438377927}
   - component: {fileID: 4167437421275379241}
+  - component: {fileID: 9119519937051194986}
   m_Layer: 5
   m_Name: CoinsBar
   m_TagString: Untagged
@@ -7423,6 +7425,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &9119519937051194986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006543951197879326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66386a10c1cb2a46b94ed1309f2fa57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleAdd: 0.2
+  changeScaleSpeed: 2
 --- !u!1 &6018289605995100183
 GameObject:
   m_ObjectHideFlags: 0
@@ -10669,7 +10685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &670493683481957672
 RectTransform:
   m_ObjectHideFlags: 0

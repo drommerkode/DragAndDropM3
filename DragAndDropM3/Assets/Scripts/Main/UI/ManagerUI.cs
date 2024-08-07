@@ -39,8 +39,9 @@ public class ManagerUI : MonoBehaviour {
     [Header("Tutorial")]
 
     [Header("Score")]
-    [SerializeField] private TextMeshProUGUI inGameScore;
+    [SerializeField] private TextMeshProUGUI scoreInGame;
     [SerializeField] private ScoreReact scoreReactInGame;
+    [SerializeField] private TextMeshProUGUI scoreLevelMenu;
 
     [Header("ResultMenu")]
     [SerializeField] private GameObject buttonNext;
@@ -150,6 +151,7 @@ public class ManagerUI : MonoBehaviour {
     private void SetLoadingUserData() {
         SetSliderMusicSFX();
         SetShadowToggle();
+        ScoreUpdateInLevelMenu();
     }
 
     public void EscPress() {
@@ -226,13 +228,17 @@ public class ManagerUI : MonoBehaviour {
 
     #region GameScoreResults
     public void SetInGameScore(int _count) {
-        inGameScore.text = _count.ToString();
+        scoreInGame.text = _count.ToString();
     }
     #endregion
 
     #region SCORE
     public void ScoreReactInGame() {
         scoreReactInGame.React();
+    }
+
+    private void ScoreUpdateInLevelMenu() { 
+        scoreLevelMenu.text = saveData.score.ToString();
     }
     #endregion
 
