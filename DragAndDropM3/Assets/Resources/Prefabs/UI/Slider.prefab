@@ -508,6 +508,7 @@ GameObject:
   - component: {fileID: 3092727938583115983}
   - component: {fileID: 7431729930729482902}
   - component: {fileID: 5603718948909075334}
+  - component: {fileID: 8919340997778417761}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -631,6 +632,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8919340997778417761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6207345047053957775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98ae12c937609e43b20ec8aa86752b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textID: '%Music%'
 --- !u!1 &7746108034189034692
 GameObject:
   m_ObjectHideFlags: 0

@@ -64,30 +64,20 @@ public class ManagerLanguages : MonoBehaviour
         SetEnLanguageStrings();
     }
     private void SetRuLanguageStrings() {
-        langRU.Add("%GameName%",        "Нубик: обби на шихе");
+        langRU.Add("%GameName_1%",      "Сокровища");
+        langRU.Add("%GameName_2%",      "капибары");
         langRU.Add("%Play%",            "Играть");
         langRU.Add("%Settings%",        "Настройки");
         langRU.Add("%Auth%",            "Авторизация");
         langRU.Add("%Back%",            "Назад");
         langRU.Add("%Yes%",             "Да");
         langRU.Add("%No%",              "Нет");
-        langRU.Add("%Levels%",          "Выбор уровня");
         langRU.Add("%Level%",           "Уровень");
         langRU.Add("%Loading%",         "Загрузка...");
         langRU.Add("%Pause%",           "Пауза");
-        langRU.Add("%InGamePause%",     "Tab Пауза");
-        langRU.Add("%InGameRespawn%",   "R\nЧекпоинт");
         langRU.Add("%Menu%",            "Меню");
-        langRU.Add("%Info%",            "Как играть");
-        langRU.Add("%SettingsAudio%",   "Громкость");
-        langRU.Add("%SettingsControl%", "Управление");
-        langRU.Add("%SettingsGraphics%","Графика");
         langRU.Add("%SFX%",             "Звуки");
         langRU.Add("%Music%",           "Музыка");
-        langRU.Add("%Camera%",          "Камера");
-        langRU.Add("%Steering%",        "Поворот");
-        langRU.Add("%Steer%",           "Руль");
-        langRU.Add("%Buttons%",         "Кнопки");
         langRU.Add("%Shadows%",         "Тени");
         langRU.Add("%ExitToMenu?%",     "Выйти в меню?");
         langRU.Add("%SignIn?%",         "Авторизоваться?");
@@ -98,55 +88,40 @@ public class ManagerLanguages : MonoBehaviour
         langRU.Add("%Advertising%",     "Реклама");
 
         langRU.Add("%Results%",         "Результаты");
+        langRU.Add("%Total%",           "Всего");
+        langRU.Add("%Collected%",       "Собрано");
         langRU.Add("%Restart%",         "Перезапуск");
         langRU.Add("%Next%",            "Далее");
         langRU.Add("%Skip%",            "Пропустить");
-        langRU.Add("%Time%",            "Время");
         langRU.Add("%LevelCompleted%",  "Уровень завершен"); 
         langRU.Add("%GameСompleted%",   "Игра пройдена");
-        langRU.Add("%LevelFailed%",     "Уровень провален");
 
-        langRU.Add("%Tut_Steering%",    "Поворот");
-        langRU.Add("%Tut_Gas%",         "Газ");
-        langRU.Add("%Tut_Front%",       "Вперёд");
-        langRU.Add("%Tut_Back%",        "Назад");
-        langRU.Add("%Tut_Stop%",        "Трмоз");
-        langRU.Add("%Tut_Transmission%","Коробка передач");
-        langRU.Add("%Tut_Camera%",      "Камера");
-        langRU.Add("%Tut_ChangeControl%", "В настройках можно изменить тип управления");
+        langRU.Add("%Tut_1%",           "Перетаскивай и соединяй одинаковые предметы");
+        langRU.Add("%Tut_2%",           "Чем быстрее ты это делаешь, тем больше монет получаешь");
 
-        langRU.Add("%TutPC_Steering%",     "<color=#f94d58>A/D</color> - Поворот");
-        langRU.Add("%TutPC_Gas%",          "<color=#f94d58>W/S</color> - Газ");
-        langRU.Add("%TutPC_Stop%",         "<color=#f94d58>Пробел</color> - Тормоз");
-        langRU.Add("%TutPC_Camera%",       "<color=#f94d58>Мышь</color> - Камера");
-        langRU.Add("%TutPC_Check%",        "<color=#f94d58>R</color> - Чекпоинт");
+        langRU.Add("%CompleteInfo_1%",  "Ахахахахаха!!!\nВсе сокровища будут наши!!!");
+        langRU.Add("%CompleteInfo_2%",  "Ещё! Ещё! Ещё!");
+        langRU.Add("%CompleteInfo_3%",  "Нужно больше золота!!!");
+        langRU.Add("%CompleteInfo_4%",  "Богатая капибара -\nсчастливая капибара");
+        langRU.Add("%CompleteInfo_5%",  "Никто не собирает сокровища\nлучше тебя");
+        langRU.Add("%CompleteInfo_6%",  "Какая красота");
     }
 
     private void SetEnLanguageStrings() {
-        langEN.Add("%GameName%",        "Noob: Obby in a car");
+        langEN.Add("%GameName_1%",      "Capybara's");
+        langEN.Add("%GameName_2%",      "Treasures");
         langEN.Add("%Play%",            "Play");
         langEN.Add("%Settings%",        "Settings");
         langEN.Add("%Auth%",            "Authorization");
         langEN.Add("%Back%",            "Back");
         langEN.Add("%Yes%",             "Yes");
         langEN.Add("%No%",              "No");
-        langEN.Add("%Levels%",          "Level selection");
         langEN.Add("%Level%",           "Level");
         langEN.Add("%Loading%",         "Loading...");
         langEN.Add("%Pause%",           "Pause");
-        langEN.Add("%InGamePause%",     "Tab Pause");
-        langEN.Add("%InGameRespawn%",   "R\nCheckpoint");
         langEN.Add("%Menu%",            "Menu");
-        langEN.Add("%Info%",            "How to play");
-        langEN.Add("%SettingsAudio%",   "Volume");
-        langEN.Add("%SettingsControl%", "Control");
-        langEN.Add("%SettingsGraphics%","Graphics");
         langEN.Add("%SFX%",             "SFX");
         langEN.Add("%Music%",           "Music");
-        langEN.Add("%Camera%",          "Camera");
-        langEN.Add("%Steering%",        "Steering");
-        langEN.Add("%Steer%",           "Wheel");
-        langEN.Add("%Buttons%",         "Buttons");
         langEN.Add("%Shadows%",         "Shadows");
         langEN.Add("%ExitToMenu?%",     "Exit to menu?");
         langEN.Add("%SignIn?%",         "Sign in?");
@@ -157,28 +132,20 @@ public class ManagerLanguages : MonoBehaviour
         langEN.Add("%Advertising%",     "Advertising");
 
         langEN.Add("%Results%",         "Results");
+        langEN.Add("%Total%",           "Total");
+        langEN.Add("%Collected%",       "Collected");
         langEN.Add("%Restart%",         "Restart");
         langEN.Add("%Next%",            "Next");
         langEN.Add("%Skip%",            "Skip");
-        langEN.Add("%Time%",            "Time");  
         langEN.Add("%LevelCompleted%",  "Level completed");
         langEN.Add("%GameСompleted%",   "Game completed");
-        langEN.Add("%LevelFailed%",     "Level failed");
 
-        langEN.Add("%Tut_Steering%",    "Steering");
-        langEN.Add("%Tut_Gas%",         "Gas");
-        langEN.Add("%Tut_Front%",       "Front");
-        langEN.Add("%Tut_Back%",        "Back");
-        langEN.Add("%Tut_Stop%",        "Stop");
-        langEN.Add("%Tut_Transmission%","Transmission");
-        langEN.Add("%Tut_Camera%",      "Camera");
-        langEN.Add("%Tut_ChangeControl%","In the settings you can change the control type");
-
-        langEN.Add("%TutPC_Steering%",     "<color=#f94d58>A/D</color> - Steering");
-        langEN.Add("%TutPC_Gas%",          "<color=#f94d58>W/S</color> - Gas");
-        langEN.Add("%TutPC_Stop%",         "<color=#f94d58>Space</color> - Stop");
-        langEN.Add("%TutPC_Camera%",       "<color=#f94d58>Mouse</color> - Camera");
-        langEN.Add("%TutPC_Check%",        "<color=#f94d58>R</color> - Checkpoint");
+        langEN.Add("%CompleteInfo_1%", "Ahahahahahaha!!!\nAll the treasures will be ours!!!");
+        langEN.Add("%CompleteInfo_2%", "More! More! More!");
+        langEN.Add("%CompleteInfo_3%", "We need more gold!!!");
+        langEN.Add("%CompleteInfo_4%", "A rich capybara is a\nhappy capybara");
+        langEN.Add("%CompleteInfo_5%", "No one collects treasures\nbetter than you");
+        langEN.Add("%CompleteInfo_6%", "How beautiful");
     }
     #endregion
 }
