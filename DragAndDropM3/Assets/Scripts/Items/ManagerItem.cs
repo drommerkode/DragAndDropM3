@@ -14,9 +14,12 @@ public class ManagerItem : MonoBehaviour
     [SerializeField] private int curCount = 0;
     private int curScore;
 
-    ManagerUI managerUI;
+    private CameraReact cameraReact;
+    private ManagerUI managerUI;
 
     public void Init(int _allVariants, ManagerUI _managerUI) {
+        cameraReact = Camera.main.GetComponent<CameraReact>();
+
         allVariants = _allVariants;
         managerUI = _managerUI;
 
@@ -49,6 +52,7 @@ public class ManagerItem : MonoBehaviour
     }
 
     public void DestroyItem() {
+        cameraReact.React();
         curScore = curScore + 1;// + mod
         managerUI.SetInGameScore(curScore);
 
