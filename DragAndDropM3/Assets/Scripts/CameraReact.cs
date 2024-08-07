@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class CameraReact : MonoBehaviour
 {
@@ -25,7 +24,7 @@ public class CameraReact : MonoBehaviour
             StopCoroutine(cameraShakeFOVCoroutine);
         }
         float randomFOV = Random.Range(-addFOV, addFOV);
-        float targetFOV = cameraMain.fieldOfView + randomFOV;
+        float targetFOV = startFOV + randomFOV;
         cameraShakeFOVCoroutine = CameraShakeFOVCoroutine(targetFOV);
         StartCoroutine(cameraShakeFOVCoroutine);
 
@@ -33,7 +32,7 @@ public class CameraReact : MonoBehaviour
             StopCoroutine(cameraShakePositionCoroutine);
         }
         float randomPos = Random.Range(-addPosition, addPosition);
-        Vector3 targetPOS = cameraMain.transform.position + Vector3.one * randomPos;
+        Vector3 targetPOS = startPos + Vector3.one * randomPos;
         cameraShakePositionCoroutine = CameraShakePositionCoroutine(targetPOS);
         StartCoroutine(cameraShakePositionCoroutine);
     }
@@ -65,16 +64,16 @@ public class CameraReact : MonoBehaviour
     }
 
     private Vector3 GetUpdatedPos(Vector3 _target) {
-        Vector3 newRot = cameraMain.transform.position;
-        if (newRot.x != _target.x) {
-            newRot.x = Mathf.MoveTowardsAngle(newRot.x, _target.x, changePosSpeed * Time.deltaTime);
+        Vector3 newPos = cameraMain.transform.position;
+        if (newPos.x != _target.x) {
+            newPos.x = Mathf.MoveTowardsAngle(newPos.x, _target.x, changePosSpeed * Time.deltaTime);
         }
-        if (newRot.y != _target.y) {
-            newRot.y = Mathf.MoveTowardsAngle(newRot.y, _target.y, changePosSpeed * Time.deltaTime);
+        if (newPos.y != _target.y) {
+            newPos.y = Mathf.MoveTowardsAngle(newPos.y, _target.y, changePosSpeed * Time.deltaTime);
         }
-        if (newRot.z != _target.z) {
-            newRot.z = Mathf.MoveTowardsAngle(newRot.z, _target.z, changePosSpeed * Time.deltaTime);
+        if (newPos.z != _target.z) {
+            newPos.z = Mathf.MoveTowardsAngle(newPos.z, _target.z, changePosSpeed * Time.deltaTime);
         }
-        return newRot;
+        return newPos;
     }
 }

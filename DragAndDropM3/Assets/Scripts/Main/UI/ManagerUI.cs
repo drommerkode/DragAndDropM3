@@ -40,6 +40,7 @@ public class ManagerUI : MonoBehaviour {
 
     [Header("Score")]
     [SerializeField] private TextMeshProUGUI inGameScore;
+    [SerializeField] private ScoreReact scoreReactInGame;
 
     [Header("ResultMenu")]
     [SerializeField] private GameObject buttonNext;
@@ -226,6 +227,12 @@ public class ManagerUI : MonoBehaviour {
     #region GameScoreResults
     public void SetInGameScore(int _count) {
         inGameScore.text = _count.ToString();
+    }
+    #endregion
+
+    #region SCORE
+    public void ScoreReactInGame() {
+        scoreReactInGame.React();
     }
     #endregion
 

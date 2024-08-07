@@ -55,6 +55,7 @@ public class ManagerItem : MonoBehaviour
         cameraReact.React();
         curScore = curScore + 1;// + mod
         managerUI.SetInGameScore(curScore);
+        managerUI.ScoreReactInGame();
 
         curCount--;
         if (curCount <= 0) {
