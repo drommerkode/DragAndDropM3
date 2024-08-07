@@ -51,6 +51,7 @@ public class ManagerGame : MonoBehaviour {
     public static UnityEvent OnLevelFailed = new UnityEvent();
 
     public static UnityEvent<bool> OnShowLevelMenu = new UnityEvent<bool>();
+    public static UnityEvent OnScoreRevardGeted = new UnityEvent();
     #endregion
 
     public static ManagerGame instance { get; private set; }
@@ -310,10 +311,15 @@ public class ManagerGame : MonoBehaviour {
 
     public void RewardGeted(RewardType _rewardType) {
         switch (_rewardType) {
-            case RewardType.respawn:
+            case RewardType.curScore:
+                saveData.score += saveData.lastScore;
+                saveData.lastScore *= 2;
+                SaveUserData();
+                OnScoreRevardGeted.Invoke();
+                break;
+            case RewardType.skip:
                 SaveUserData();
                 ManagerScenes.GoLevel();
-                //SaveUserData();
                 break;
         }
     }

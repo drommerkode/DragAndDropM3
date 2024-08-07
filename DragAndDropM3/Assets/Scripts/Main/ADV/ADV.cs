@@ -15,8 +15,8 @@ public class ADV : MonoBehaviour {
     }
 
     public enum RewardType { 
-        coins,
-        respawn
+        curScore,
+        skip
     }
 
     private List<string> rewardStrings = new List<string>() { "coins", "respawn" };

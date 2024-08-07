@@ -4,7 +4,7 @@ using UnityEngine;
 public class ScoreReact : MonoBehaviour
 {
     [SerializeField] private float scaleAdd = 0.2f;
-    [SerializeField] private float changeScaleSpeed = 1f;
+    [SerializeField] private float changeScaleSpeed = 2f;
     private float startScaleX;
     private IEnumerator scoreReactCoroutine;
 

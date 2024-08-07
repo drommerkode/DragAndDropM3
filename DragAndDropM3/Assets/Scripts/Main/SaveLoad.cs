@@ -38,5 +38,7 @@ public class SaveLoad : MonoBehaviour
 
         public int levelsOpened = 1;
         public int score = 1;
+        public int lastScore = 0;
+        public int maxScore = 0;
     }
 }

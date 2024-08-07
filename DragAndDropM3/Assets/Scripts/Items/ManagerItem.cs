@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static SaveLoad;
 
 public class ManagerItem : MonoBehaviour
 {
@@ -12,18 +13,18 @@ public class ManagerItem : MonoBehaviour
     [SerializeField] private List<ItemConfiguration> itemConfs = new List<ItemConfiguration>();
     [SerializeField] private List<ItemConfiguration> spawnConfs = new List<ItemConfiguration>();
     [SerializeField] private int curCount = 0;
-    private int curScore;
 
     private CameraReact cameraReact;
     private ManagerUI managerUI;
 
     public void Init(int _allVariants, ManagerUI _managerUI) {
+        saveData.lastScore = 0;
         cameraReact = Camera.main.GetComponent<CameraReact>();
 
         allVariants = _allVariants;
         managerUI = _managerUI;
 
-        managerUI.SetInGameScore(0);
+        managerUI.SetInGameScore();
 
         allVariants = Mathf.Clamp(allVariants, 0, itemConfs.Count);
         SpawnItems();
@@ -53,13 +54,13 @@ public class ManagerItem : MonoBehaviour
 
     public void DestroyItem() {
         cameraReact.React();
-        curScore = curScore + 1;// + mod
-        managerUI.SetInGameScore(curScore);
+        saveData.lastScore += 1;// + mod
+        managerUI.SetInGameScore();
         managerUI.ScoreReactInGame();
 
         curCount--;
         if (curCount <= 0) {
-            SaveLoad.saveData.score += curScore;
+            saveData.score += saveData.lastScore;
             ManagerGame.instance.LevelCompleted();
         }
     }

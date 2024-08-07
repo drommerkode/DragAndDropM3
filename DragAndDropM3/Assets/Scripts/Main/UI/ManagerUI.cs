@@ -30,6 +30,7 @@ public class ManagerUI : MonoBehaviour {
 
     [Header("ADV links")]
     [SerializeField] private GameObject authButton;
+    [SerializeField] private GameObject advRewardScoreButton;
 
     [Header("Setting links")]
     [SerializeField] private Slider sliderMusic;
@@ -42,6 +43,11 @@ public class ManagerUI : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI scoreInGame;
     [SerializeField] private ScoreReact scoreReactInGame;
     [SerializeField] private TextMeshProUGUI scoreLevelMenu;
+    [SerializeField] private TextMeshProUGUI scoreResultAll;
+    [SerializeField] private ScoreReact scoreReactResultAll;
+    [SerializeField] private TextMeshProUGUI scoreResultCur;
+    [SerializeField] private ScoreReact scoreReactResultCur;
+    [SerializeField] private float scoreResultUpdateDelay = 0.5f;
 
     [Header("ResultMenu")]
     [SerializeField] private GameObject buttonNext;
@@ -77,6 +83,7 @@ public class ManagerUI : MonoBehaviour {
         ManagerGame.OnShowLevelResult.AddListener(GoResultMenu);
         ManagerGame.OnLevelCompleted.AddListener(GoСompletedMenu);
         ManagerGame.OnLevelFailed.AddListener(GoFailedMenu);
+        ManagerGame.OnScoreRevardGeted.AddListener(UpdateResultScoreCur);
         UIInput.OnUIESC.AddListener(EscPress);
 
         AllUIForDeactive = new List<GameObject> {
@@ -227,8 +234,8 @@ public class ManagerUI : MonoBehaviour {
     }
 
     #region GameScoreResults
-    public void SetInGameScore(int _count) {
-        scoreInGame.text = _count.ToString();
+    public void SetInGameScore() {
+        scoreInGame.text = saveData.lastScore.ToString();
     }
     #endregion
 
@@ -239,6 +246,28 @@ public class ManagerUI : MonoBehaviour {
 
     private void ScoreUpdateInLevelMenu() { 
         scoreLevelMenu.text = saveData.score.ToString();
+    }
+
+    private void UpdateResultScoreAll() {
+        StartCoroutine(AddScoreAllCoroutine());
+    }
+
+    private void UpdateResultScoreCur() {
+        advRewardScoreButton.SetActive(false);
+        StartCoroutine(AddScoreCurCoroutine());
+    }
+
+    private IEnumerator AddScoreAllCoroutine() { 
+        yield return new WaitForSeconds(scoreResultUpdateDelay);
+        scoreResultAll.text = saveData.score.ToString();
+        scoreReactResultAll.React();
+    }
+
+    private IEnumerator AddScoreCurCoroutine() {
+        yield return new WaitForSeconds(scoreResultUpdateDelay);
+        scoreResultCur.text = saveData.lastScore.ToString();
+        scoreReactResultCur.React();
+        UpdateResultScoreAll();
     }
     #endregion
 
@@ -328,6 +357,9 @@ public class ManagerUI : MonoBehaviour {
         halfFade.SetActive(true);
         resultMenu.SetActive(true);
         menuState = MenuState.resultMenu;
+        scoreResultAll.text = (saveData.score - saveData.lastScore).ToString();
+        scoreResultCur.text = saveData.lastScore.ToString();
+        UpdateResultScoreAll();
         //ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
         ManagerGame.instance.GameplayStop();
     }
@@ -404,12 +436,6 @@ public class ManagerUI : MonoBehaviour {
 
     #endregion
 
-    #region ADV
-    public void ShowRewardADV() {
-        ManagerGame.instance.ShowRewardADV(ADV.RewardType.respawn);
-    }
-    #endregion
-
     #region SOUND
     public void SetSoundSFX(float _value) {
         ManagerGame.instance.SetSoundSFX(_value);
@@ -437,7 +463,7 @@ public class ManagerUI : MonoBehaviour {
 
     #region ADV
     private void ShowADV(bool _value) {
-        ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
+        //ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
         if (_value) {
             DeactiveAllUI();
         }
@@ -466,6 +492,10 @@ public class ManagerUI : MonoBehaviour {
                     break;
             }
         }
+    }
+
+    public void ShowRewardADVScore() {
+        ManagerGame.instance.ShowRewardADV(ADV.RewardType.curScore);
     }
 
     private void DopCheckForPauseAfterADV() {
