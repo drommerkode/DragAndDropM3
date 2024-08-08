@@ -4166,7 +4166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2223997369830714747
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6667,6 +6667,7 @@ MonoBehaviour:
   logoMenu: {fileID: 2738532042676280751}
   authMenu: {fileID: 7895464015556307272}
   rateMenu: {fileID: 6608426822188416441}
+  pauseButtonInGame: {fileID: 8201345443394640499}
   authButton: {fileID: 5457037115624327953}
   advRewardScoreButton: {fileID: 1752213929264309745}
   sliderMusic: {fileID: 4633148672621525382}
@@ -16170,5 +16171,10 @@ PrefabInstance:
 --- !u!224 &4509393592993591894 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4899850178284759869, guid: 7149986072351d549a6d9f3804be295f, type: 3}
+  m_PrefabInstance: {fileID: 9037411989307136363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8201345443394640499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 917149274998588184, guid: 7149986072351d549a6d9f3804be295f, type: 3}
   m_PrefabInstance: {fileID: 9037411989307136363}
   m_PrefabAsset: {fileID: 0}

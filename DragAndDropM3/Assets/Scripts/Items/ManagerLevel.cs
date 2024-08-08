@@ -84,6 +84,7 @@ public class ManagerLevel : MonoBehaviour
             saveData.score += saveData.lastScore;
             StopAllCoroutines();
             managerUI.ScoreMultiplierShow(false);
+            managerUI.HidePauseButton();
             StartCoroutine(EndLevelCoroutine());
         }
     }

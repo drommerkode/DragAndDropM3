@@ -28,6 +28,9 @@ public class ManagerUI : MonoBehaviour {
     [SerializeField] private GameObject authMenu;
     [SerializeField] private GameObject rateMenu;
 
+    [Header("Additional")]
+    [SerializeField] private GameObject pauseButtonInGame;
+
     [Header("ADV links")]
     [SerializeField] private GameObject authButton;
     [SerializeField] private GameObject advRewardScoreButton;
@@ -239,13 +242,17 @@ public class ManagerUI : MonoBehaviour {
         soundPress.PlaySound();
     }
 
-    #region GameScoreResults
-    public void SetInGameScore() {
-        scoreInGame.text = saveData.lastScore.ToString();
+    #region EXTRA
+    public void HidePauseButton() { 
+        pauseButtonInGame.SetActive(false);
     }
     #endregion
 
     #region SCORE
+    public void SetInGameScore() {
+        scoreInGame.text = saveData.lastScore.ToString();
+    }
+
     public void ScoreReactInGame() {
         scoreReactInGame.ReactUp();
     }
