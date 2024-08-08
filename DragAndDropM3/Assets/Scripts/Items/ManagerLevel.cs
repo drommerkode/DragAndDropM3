@@ -8,6 +8,10 @@ public class ManagerLevel : MonoBehaviour
     [Header("End level")]
     [SerializeField] private float endLevelDelay = 1f;
 
+    [Header("Merge")]
+    [SerializeField] private int mergeScore = 2;
+    [SerializeField] private ScoreFly scoreFly;
+
     [Header("Items")]
     [SerializeField] private int allVariants = 20;
     [SerializeField] private Item item;
@@ -63,12 +67,17 @@ public class ManagerLevel : MonoBehaviour
         ManagerGame.instance.LevelLoaded();
     }
 
-    public void DestroyItem(bool _merge) {
-        saveData.lastScore += 1 * curScoreMultiplier;
-        managerUI.SetInGameScore();
-        managerUI.ScoreReactInGame();
-
+    public void DestroyItem(bool _merge, Vector3 _mergePosition) {
         if (_merge) {
+            int ms = mergeScore * curScoreMultiplier;
+            saveData.lastScore += ms;
+            managerUI.SetInGameScore();
+            managerUI.ScoreReactInGame();
+
+            ScoreFly sf = Instantiate(scoreFly);
+            sf.transform.position = _mergePosition;
+            sf.SetScore(ms);
+
             cameraReact.React();
 
             curScoreMultiplier++;

@@ -32,14 +32,14 @@ public class Item : MonoBehaviour
         if ((maskItem & (1 << collision.gameObject.layer)) != 0) {
             if (collision.gameObject.TryGetComponent<Item>(out Item otherItem)) {
                 if (canMerge && itemConfiguration == otherItem.itemConfiguration) {
-                    otherItem.ItemMerge(false);
-                    ItemMerge(true);
+                    otherItem.ItemMerge(false, Vector3.zero);
+                    ItemMerge(true, collision.contacts[0].point);
                 }
             }
         }
     }
 
-    public void ItemMerge(bool _merge) {
+    public void ItemMerge(bool _merge, Vector3 _collisionPoint) {
         graber?.StopGrab();
         canMerge = false;
         CreateDestoyEffect(_merge);
@@ -48,6 +48,6 @@ public class Item : MonoBehaviour
     private void CreateDestoyEffect(bool _merge) {
         Instantiate(partDestroy, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        managerItem?.DestroyItem(_merge);
+        managerItem?.DestroyItem(_merge, transform.position + Vector3.up * 0.5f);
     }
 }

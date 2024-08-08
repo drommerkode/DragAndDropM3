@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2222672621f33ac4daeabbdff76c3338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endLevelDelay: 1
+  mergeScore: 2
+  scoreFly: {fileID: 8941513987552799463, guid: d547fb93167abcd4bb203a06ff0d2f0b, type: 3}
   allVariants: 20
   item: {fileID: 3269231131857877281, guid: 161bb23cc0db79f49996a424e63bd142, type: 3}
   spawnPoints:
