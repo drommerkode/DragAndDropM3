@@ -5,7 +5,10 @@ using static SaveLoad;
 
 public class ManagerLevel : MonoBehaviour
 {
+    [Header("End level")]
+    [SerializeField] private float endLevelDelay = 1f;
 
+    [Header("Items")]
     [SerializeField] private int allVariants = 20;
     [SerializeField] private Item item;
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
@@ -79,8 +82,15 @@ public class ManagerLevel : MonoBehaviour
 
         if (curCount <= 0) {
             saveData.score += saveData.lastScore;
-            ManagerGame.instance.LevelCompleted();
+            StopAllCoroutines();
+            managerUI.ScoreMultiplierShow(false);
+            StartCoroutine(EndLevelCoroutine());
         }
+    }
+
+    private IEnumerator EndLevelCoroutine() { 
+        yield return new WaitForSeconds(endLevelDelay);
+        ManagerGame.instance.LevelCompleted();
     }
 
     private void AfterChangeCurScoreMultiplier() {
