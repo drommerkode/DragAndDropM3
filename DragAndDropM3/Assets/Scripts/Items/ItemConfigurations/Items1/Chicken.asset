@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dd261dbafca290439bd4ed3ba8abb87, type: 3}
-  m_Name: Cube
+  m_Name: Chicken
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  _mesh: {fileID: 1248039166958328286, guid: 50456a0be81193b48ba6b31e3a54b446, type: 3}
