@@ -433,7 +433,7 @@ TextureImporter:
         width: 96
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -454,7 +454,7 @@ TextureImporter:
         width: 96
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -462,6 +462,27 @@ TextureImporter:
       bones: []
       spriteID: 672c609ed7681b64e95e8e14770e8452
       internalID: 694639250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Circle
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 1060
+        width: 96
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c01c9a910c03bc445ba1b3d53da18cac
+      internalID: -1329508586
       vertices: []
       indices: 
       edges: []
@@ -483,6 +504,7 @@ TextureImporter:
       UI_Back: 2744512
       UI_Bar: 1951427525
       UI_But: -79213318
+      UI_Circle: -1329508586
       UI_Coin: -88863087
       UI_En: 1505648951
       UI_Home: -674448062

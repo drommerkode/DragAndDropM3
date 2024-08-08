@@ -11,7 +11,7 @@ public class LevelLoader : MonoBehaviour
     public void Init(ManagerUI _managerUI) {
         levelNum = ManagerGame.instance.GetCurLevel();
         GameObject l = Instantiate(level);
-        ManagerItem mi = l.GetComponent<ManagerItem>();
+        ManagerLevel mi = l.GetComponent<ManagerLevel>();
         mi.Init(itemsVariants, _managerUI);
         //ManagerGame.instance.LevelLoaded();
     }

@@ -49,6 +49,12 @@ public class ManagerUI : MonoBehaviour {
     [SerializeField] private ScoreReact scoreReactResultCur;
     [SerializeField] private float scoreResultUpdateDelay = 0.5f;
 
+    [Header("Score multiplier")]
+    [SerializeField] private GameObject scoreMultiplier;
+    [SerializeField] private Image scoreMultiplierProgress;
+    [SerializeField] private TextMeshProUGUI scoreMultiplierText;
+    [SerializeField] private ScoreReact scoreMultiplierReact;
+
     [Header("ResultMenu")]
     [SerializeField] private GameObject buttonNext;
     [SerializeField] private GameObject buttonSkip;
@@ -241,7 +247,7 @@ public class ManagerUI : MonoBehaviour {
 
     #region SCORE
     public void ScoreReactInGame() {
-        scoreReactInGame.React();
+        scoreReactInGame.ReactUp();
     }
 
     private void ScoreUpdateInLevelMenu() { 
@@ -260,14 +266,35 @@ public class ManagerUI : MonoBehaviour {
     private IEnumerator AddScoreAllCoroutine() { 
         yield return new WaitForSeconds(scoreResultUpdateDelay);
         scoreResultAll.text = saveData.score.ToString();
-        scoreReactResultAll.React();
+        scoreReactResultAll.ReactUp();
     }
 
     private IEnumerator AddScoreCurCoroutine() {
         yield return new WaitForSeconds(scoreResultUpdateDelay);
         scoreResultCur.text = saveData.lastScore.ToString();
-        scoreReactResultCur.React();
+        scoreReactResultCur.ReactUp();
         UpdateResultScoreAll();
+    }
+    #endregion
+
+    #region SCORE MULTIPLIER
+    public void ScoreMultiplierShow(bool _value) { 
+        scoreMultiplier.SetActive(_value);
+    }
+    public void ScoreMultiplierUpdateProgress(float _progress) { 
+        scoreMultiplierProgress.fillAmount = _progress;
+    }
+
+    public void ScoreMultiplierUpdateText(string _text) {
+        scoreMultiplierText.text = _text;
+    }
+
+    public void ScoreMultiplierReactUp() {
+        scoreMultiplierReact.ReactUp();
+    }
+
+    public void ScoreMultiplierReactDown() {
+        scoreMultiplierReact.ReactDown();
     }
     #endregion
 

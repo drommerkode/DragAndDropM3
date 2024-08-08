@@ -9,7 +9,7 @@ public class Item : MonoBehaviour
     [SerializeField] private LayerMask maskItem;
     [SerializeField] private ParticleSystem partDestroy;
     [HideInInspector] public GrabItModStatic graber;
-    [HideInInspector] public ManagerItem managerItem;
+    [HideInInspector] public ManagerLevel managerItem;
     private bool canMerge = false;
 
     private void Awake() {
@@ -32,22 +32,22 @@ public class Item : MonoBehaviour
         if ((maskItem & (1 << collision.gameObject.layer)) != 0) {
             if (collision.gameObject.TryGetComponent<Item>(out Item otherItem)) {
                 if (canMerge && itemConfiguration == otherItem.itemConfiguration) {
-                    otherItem.ItemMerge();
-                    ItemMerge();
+                    otherItem.ItemMerge(false);
+                    ItemMerge(true);
                 }
             }
         }
     }
 
-    public void ItemMerge() {
+    public void ItemMerge(bool _merge) {
         graber?.StopGrab();
         canMerge = false;
-        CreateDestoyEffect();
+        CreateDestoyEffect(_merge);
     }
 
-    private void CreateDestoyEffect() {
+    private void CreateDestoyEffect(bool _merge) {
         Instantiate(partDestroy, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        managerItem?.DestroyItem();
+        managerItem?.DestroyItem(_merge);
     }
 }

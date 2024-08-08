@@ -59,8 +59,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 639df2191f9f22945a781f2a4b92ff63, type: 2}
   - {fileID: 11400000, guid: 78907b52890ffa840a6456d8a85f8c64, type: 2}
   - {fileID: 11400000, guid: 589f4d7ca8653aa459dab8e49c0c1421, type: 2}
-  spawnConfs: []
-  curCount: 0
+  maxScoreMultiplier: 10
+  minSpeedScoreMultiplier: 0.2
+  speedScoreMultiplierAdd: 0.1
 --- !u!1 &1270107913002999446
 GameObject:
   m_ObjectHideFlags: 0
