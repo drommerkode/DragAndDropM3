@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 0.9468817, b: 0.8066038, a: 1}
+  m_AmbientSkyColor: {r: 0.6320754, g: 0.6313726, b: 0.4862745, a: 1}
   m_AmbientEquatorColor: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
   m_AmbientGroundColor: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
   m_AmbientIntensity: 1
@@ -32,7 +32,7 @@ RenderSettings:
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1

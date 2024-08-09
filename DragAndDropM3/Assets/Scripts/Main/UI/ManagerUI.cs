@@ -137,7 +137,7 @@ public class ManagerUI : MonoBehaviour {
 
         ManagerGame.instance.SetPause(true);
 
-        if (ManagerGame.instance.GetIsMobile()) {
+        /*if (ManagerGame.instance.GetIsMobile()) {
             if (saveData.showFirstTutorialMobile) {
                 GoTutorial();
             }
@@ -152,7 +152,8 @@ public class ManagerUI : MonoBehaviour {
             else {
                 GoInGameMenu();
             }
-        }
+        }*/
+        GoInGameMenu();
 
         SetLoadingUserData();
     }
