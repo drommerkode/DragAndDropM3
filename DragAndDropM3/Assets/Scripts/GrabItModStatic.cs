@@ -27,6 +27,7 @@ public class GrabItModStatic : MonoBehaviour {
     private Transform cameraTransform;
 
     private Vector3 targetPos;
+    private Vector3 targetPosY;
     private GameObject hitPointObject;
 	private Item curItem;
 	private Outline curOutline;
@@ -67,6 +68,7 @@ public class GrabItModStatic : MonoBehaviour {
                     }
                     if (hitInfo.collider.TryGetComponent<Item>(out curItem)) {
                         curItem.graber = this;
+						targetPosY = new Vector3(0, hitInfo.point.y, 0);
                     }
                     if (hitInfo.collider.TryGetComponent<Outline>(out curOutline)) {
                         curOutline.enabled = true;
@@ -84,7 +86,7 @@ public class GrabItModStatic : MonoBehaviour {
 	private void SetTargetPosition() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hitInfo, grabMaxDistance, maskGround)) {
-            targetPos = hitInfo.point;
+            targetPos = hitInfo.point + targetPosY;
         }
     }
 	
