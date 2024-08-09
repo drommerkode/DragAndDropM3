@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: SweetPepper
   m_EditorClassIdentifier: 
   _mesh: {fileID: -3132226098982089507, guid: 2e8795ccce9e8b0409281abcd0da309a, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

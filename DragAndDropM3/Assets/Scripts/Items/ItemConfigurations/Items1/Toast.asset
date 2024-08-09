@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Toast
   m_EditorClassIdentifier: 
   _mesh: {fileID: 3562986263409630012, guid: 25b8f1e08ab48be408c065f5b5f40aba, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Coconut
   m_EditorClassIdentifier: 
   _mesh: {fileID: 1614944155946130323, guid: ea21b03625ecebf438efc149dfe4b8e0, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

@@ -22,19 +22,18 @@ public class GrabItModStatic : MonoBehaviour {
 	[Header("Layers")]
 	[SerializeField] private LayerMask maskItem;
     [SerializeField] private LayerMask maskGround;
+    [SerializeField] private Vector3 targetPosY = new Vector3(0, 0.5f, 0);
 
     private Rigidbody targetRB = null;
     private Transform cameraTransform;
 
     private Vector3 targetPos;
-    private Vector3 targetPosY;
     private GameObject hitPointObject;
 	private Item curItem;
 	private Outline curOutline;
 
     private bool grabbing = false;
 	private bool isHingeJoint = false;
-
     private LineRenderer lineRenderer;
 
 	void Awake() {
@@ -68,7 +67,6 @@ public class GrabItModStatic : MonoBehaviour {
                     }
                     if (hitInfo.collider.TryGetComponent<Item>(out curItem)) {
                         curItem.graber = this;
-						targetPosY = new Vector3(0, hitInfo.point.y, 0);
                     }
                     if (hitInfo.collider.TryGetComponent<Outline>(out curOutline)) {
                         curOutline.enabled = true;

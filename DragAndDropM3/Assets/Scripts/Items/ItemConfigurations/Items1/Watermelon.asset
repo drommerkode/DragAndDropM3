@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Watermelon
   m_EditorClassIdentifier: 
   _mesh: {fileID: -3500872997411817233, guid: f8adf5c1bc6da144bafab9b52f66ce62, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

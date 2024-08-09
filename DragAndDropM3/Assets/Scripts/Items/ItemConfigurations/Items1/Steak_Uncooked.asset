@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Steak_Uncooked
   m_EditorClassIdentifier: 
   _mesh: {fileID: -4560564127396619379, guid: 7c01f72ad69828148aec6cdf4590a9c1, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

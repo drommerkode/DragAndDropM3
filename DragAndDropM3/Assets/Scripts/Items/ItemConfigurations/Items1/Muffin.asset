@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Muffin
   m_EditorClassIdentifier: 
   _mesh: {fileID: -4112205284317897512, guid: 885a519e5bea71d45bbf37005a14c6c8, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Sushi
   m_EditorClassIdentifier: 
   _mesh: {fileID: 6200827852620188195, guid: 58441ae0bebc2ba4fba49415c202a111, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

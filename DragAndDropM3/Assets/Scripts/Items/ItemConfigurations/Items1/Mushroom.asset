@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Mushroom
   m_EditorClassIdentifier: 
   _mesh: {fileID: 7682724294687611154, guid: e9911df37510c6e48adf42979e937f24, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

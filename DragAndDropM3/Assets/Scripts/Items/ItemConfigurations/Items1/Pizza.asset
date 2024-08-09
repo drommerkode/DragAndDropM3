@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Pizza
   m_EditorClassIdentifier: 
   _mesh: {fileID: -2304508562620316840, guid: 26bba4c8dfeecd542963a5d4e7f12651, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

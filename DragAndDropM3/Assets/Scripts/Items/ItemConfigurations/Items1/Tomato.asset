@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Tomato
   m_EditorClassIdentifier: 
   _mesh: {fileID: -1340541719380434750, guid: 7bab48c8c2081004f85d9b8030fb42ec, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

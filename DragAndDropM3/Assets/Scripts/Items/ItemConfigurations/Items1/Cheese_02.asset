@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Cheese_02
   m_EditorClassIdentifier: 
   _mesh: {fileID: 3679736184912336764, guid: b8b86d1ef0d4654408e68ce05dcea0ca, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

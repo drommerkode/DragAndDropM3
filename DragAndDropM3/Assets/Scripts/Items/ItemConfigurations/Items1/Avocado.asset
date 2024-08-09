@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Avocado
   m_EditorClassIdentifier: 
   _mesh: {fileID: -830171768015006411, guid: 2d0f65a1409886b42b3235a87f15b33c, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

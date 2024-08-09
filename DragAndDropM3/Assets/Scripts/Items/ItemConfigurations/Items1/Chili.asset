@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Chili
   m_EditorClassIdentifier: 
   _mesh: {fileID: -3066650660335641530, guid: f96080cc27d6f14489c2f2eb541c92ed, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

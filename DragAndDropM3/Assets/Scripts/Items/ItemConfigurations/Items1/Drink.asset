@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Drink
   m_EditorClassIdentifier: 
   _mesh: {fileID: -9199001223208122980, guid: 6672c78ac264418409e0fce9b24b0be3, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

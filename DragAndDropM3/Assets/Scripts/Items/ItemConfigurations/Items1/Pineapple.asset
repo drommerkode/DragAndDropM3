@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Pineapple
   m_EditorClassIdentifier: 
   _mesh: {fileID: 6303616904571087415, guid: 93c59cb810aae064caff9fe7acfa2b78, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

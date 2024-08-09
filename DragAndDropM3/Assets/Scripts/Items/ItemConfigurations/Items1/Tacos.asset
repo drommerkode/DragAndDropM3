@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Tacos
   m_EditorClassIdentifier: 
   _mesh: {fileID: -1014903699373679426, guid: 4c06d5a36d010c74a8fb6808313ec0a0, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

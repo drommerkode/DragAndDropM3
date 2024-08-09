@@ -26,6 +26,7 @@ public class Item : MonoBehaviour
     public void Spawn() {
         meshFilter.mesh = itemConfiguration.mesh;
         meshCollider.sharedMesh = itemConfiguration.mesh;
+        transform.localScale = itemConfiguration.scale;
     }
 
     private void OnCollisionEnter(Collision collision) {

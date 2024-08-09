@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Burger
   m_EditorClassIdentifier: 
   _mesh: {fileID: -4101298594492280764, guid: f2f55302fd169134f80aa6d4930625b2, type: 3}
+  _scale: {x: 1, y: 1, z: 1}

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Chicken
   m_EditorClassIdentifier: 
   _mesh: {fileID: 1248039166958328286, guid: 50456a0be81193b48ba6b31e3a54b446, type: 3}
+  _scale: {x: 1, y: 1, z: 1}
