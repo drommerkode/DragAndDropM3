@@ -2015,6 +2015,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3852720880536606503, guid: 6fbc367908f3ba24cae22921cbe17cf5, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7663881896309457999, guid: 6fbc367908f3ba24cae22921cbe17cf5, type: 3}
       propertyPath: m_Name
       value: Directional Light
@@ -2030,7 +2034,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 790015685}
   - {fileID: 1048972276}
-  - {fileID: 720678784}
   - {fileID: 2047361747}
   - {fileID: 397442865}
   - {fileID: 16699095}
@@ -2040,3 +2043,4 @@ SceneRoots:
   - {fileID: 1187744600}
   - {fileID: 616387605}
   - {fileID: 2129481301}
+  - {fileID: 720678784}

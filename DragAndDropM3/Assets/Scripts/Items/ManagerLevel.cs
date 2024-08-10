@@ -55,9 +55,13 @@ public class ManagerLevel : MonoBehaviour
         }
         Shuffle(spawnConfs);
 
-        int pointNum;
+        int pointNum = 0;
         for (int i = 0; i < spawnCOunt; i++) {
-            pointNum = Random.Range(0, spawnPoints.Count);
+            pointNum++;
+            if (pointNum >= spawnPoints.Count) {
+                pointNum = 0;
+            }
+
             Item itm = Instantiate(item, spawnPoints[pointNum].position, Quaternion.identity);
             itm.itemConfiguration = spawnConfs[i];
             itm.managerItem = this;

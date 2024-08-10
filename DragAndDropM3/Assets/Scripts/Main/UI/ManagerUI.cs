@@ -14,6 +14,7 @@ public class ManagerUI : MonoBehaviour {
     [SerializeField] private GameObject fullFade;
     [SerializeField] private GameObject halfFade;
     [SerializeField] private GameObject upFade;
+    [SerializeField] private GameObject tutFade;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject levelMenu;
     [SerializeField] private GameObject inGameMenu;
@@ -138,7 +139,7 @@ public class ManagerUI : MonoBehaviour {
 
         ManagerGame.instance.SetPause(true);
 
-        /*if (ManagerGame.instance.GetIsMobile()) {
+        if (ManagerGame.instance.GetIsMobile()) {
             if (saveData.showFirstTutorialMobile) {
                 GoTutorial();
             }
@@ -153,8 +154,7 @@ public class ManagerUI : MonoBehaviour {
             else {
                 GoInGameMenu();
             }
-        }*/
-        GoInGameMenu();
+        }
 
         SetLoadingUserData();
     }
@@ -318,6 +318,7 @@ public class ManagerUI : MonoBehaviour {
         fullFade.SetActive(false);
         halfFade.SetActive(false);
         upFade.SetActive(false);
+        tutFade.SetActive(false);
     }
     #endregion
 
@@ -363,9 +364,10 @@ public class ManagerUI : MonoBehaviour {
     }
 
     public void GoTutorial() {
-        ManagerGame.instance.SetPause(true);
+        DeactiveAllUI();
+        //ManagerGame.instance.SetPause(true);
         //ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
-        halfFade.SetActive(true);
+        tutFade.SetActive(true);
         tutorialMenu.SetActive(true);
         menuState = MenuState.tutorialMenu;
         //ManagerGame.instance.ChangeCursorState(CursorLockMode.Locked);

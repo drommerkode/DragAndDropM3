@@ -64,8 +64,7 @@ public class ManagerLanguages : MonoBehaviour
         SetEnLanguageStrings();
     }
     private void SetRuLanguageStrings() {
-        langRU.Add("%GameName_1%",      "Сокровища");
-        langRU.Add("%GameName_2%",      "капибары");
+        langRU.Add("%GameName%",        "Сокровища капибары");
         langRU.Add("%Play%",            "Играть");
         langRU.Add("%Settings%",        "Настройки");
         langRU.Add("%Auth%",            "Авторизация");
@@ -108,8 +107,7 @@ public class ManagerLanguages : MonoBehaviour
     }
 
     private void SetEnLanguageStrings() {
-        langEN.Add("%GameName_1%",      "Capybara's");
-        langEN.Add("%GameName_2%",      "Treasures");
+        langEN.Add("%GameName%",        "Capybara's Treasures");
         langEN.Add("%Play%",            "Play");
         langEN.Add("%Settings%",        "Settings");
         langEN.Add("%Auth%",            "Authorization");
