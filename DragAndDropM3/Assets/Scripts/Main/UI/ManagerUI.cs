@@ -13,6 +13,7 @@ public class ManagerUI : MonoBehaviour {
     [Header("Menu links")]
     [SerializeField] private GameObject fullFade;
     [SerializeField] private GameObject halfFade;
+    [SerializeField] private GameObject upFade;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject levelMenu;
     [SerializeField] private GameObject inGameMenu;
@@ -316,6 +317,7 @@ public class ManagerUI : MonoBehaviour {
     private void DeactiveAllFade() {
         fullFade.SetActive(false);
         halfFade.SetActive(false);
+        upFade.SetActive(false);
     }
     #endregion
 
@@ -342,6 +344,7 @@ public class ManagerUI : MonoBehaviour {
         else {
             DeactiveAllUI();
             DeactiveAllFade();
+            upFade.SetActive(true);
             inGameMenu.SetActive(true);
             menuState = MenuState.inGameMenu;
             ManagerGame.instance.SetPause(false);
@@ -353,6 +356,7 @@ public class ManagerUI : MonoBehaviour {
     public void GoLevelMenu() {
         PressSound();
         DeactiveAllUI();
+        upFade.SetActive(true);
         levelMenu.SetActive(true);
         ManagerGame.instance.ShowLevelMenu(true);
         menuState = MenuState.levelMenu;

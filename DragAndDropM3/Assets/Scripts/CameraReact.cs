@@ -6,8 +6,8 @@ public class CameraReact : MonoBehaviour
     private Camera cameraMain;
     [SerializeField] private float addPosition = 0.2f;
     [SerializeField] private float changePosSpeed = 10f;
-    [SerializeField] private float addFOV = 1f;
-    [SerializeField] private float changeFOVSpeed = 10f;
+    //[SerializeField] private float addFOV = 1f;
+    //[SerializeField] private float changeFOVSpeed = 10f;
     private float startFOV;
     private Vector3 startPos;
     private IEnumerator cameraShakeFOVCoroutine;
@@ -15,19 +15,21 @@ public class CameraReact : MonoBehaviour
 
     private void Awake() {
         cameraMain = GetComponent<Camera>();
-        startFOV = cameraMain.fieldOfView;
+    }
+    private void Start() {
+        //startFOV = cameraMain.fieldOfView;
         startPos = cameraMain.transform.position;
     }
 
     public void React() {
-        if (cameraShakeFOVCoroutine != null) { 
+        /*if (cameraShakeFOVCoroutine != null) { 
             StopCoroutine(cameraShakeFOVCoroutine);
         }
         float randomFOV = Random.Range(-addFOV, addFOV);
         float targetFOV = startFOV + randomFOV;
         cameraShakeFOVCoroutine = CameraShakeFOVCoroutine(targetFOV);
         StartCoroutine(cameraShakeFOVCoroutine);
-
+        */
         if (cameraShakePositionCoroutine != null) {
             StopCoroutine(cameraShakePositionCoroutine);
         }
@@ -37,7 +39,7 @@ public class CameraReact : MonoBehaviour
         StartCoroutine(cameraShakePositionCoroutine);
     }
 
-    private IEnumerator CameraShakeFOVCoroutine(float _target) {
+    /*private IEnumerator CameraShakeFOVCoroutine(float _target) {
         while (cameraMain.fieldOfView != _target) {
             cameraMain.fieldOfView = GetUpdatedFOV(_target);
             yield return null;
@@ -50,7 +52,7 @@ public class CameraReact : MonoBehaviour
 
     private float GetUpdatedFOV(float _target) {
         return Mathf.MoveTowards(cameraMain.fieldOfView, _target, changeFOVSpeed * Time.deltaTime);
-    }
+    }*/
 
     private IEnumerator CameraShakePositionCoroutine(Vector3 _target) {
         while (cameraMain.transform.position != _target) {

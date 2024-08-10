@@ -260,6 +260,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1518517012869646764, guid: d8596ab066266af42987889cd550a520, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00024414062
+      objectReference: {fileID: 0}
     - target: {fileID: 5201869234600047181, guid: d8596ab066266af42987889cd550a520, type: 3}
       propertyPath: m_Name
       value: ManagerUI
@@ -611,7 +615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 358125200845063412, guid: 29a5d584f8dae1d4d8443478f368f4aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 358125200845063412, guid: 29a5d584f8dae1d4d8443478f368f4aa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -664,7 +668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 958424112920641157, guid: 4972c5f3a6ac94a4283d469cd606bcea, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8177085109009789297, guid: 4972c5f3a6ac94a4283d469cd606bcea, type: 3}
       propertyPath: m_LocalPosition.x
