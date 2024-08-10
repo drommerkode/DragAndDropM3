@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -11,6 +12,7 @@ public class Item : MonoBehaviour
     [HideInInspector] public GrabItModStatic graber;
     [HideInInspector] public ManagerLevel managerItem;
     private bool canMerge = false;
+    private float waitStartMergeTime = 1f;
 
     private void Awake() {
         meshFilter = GetComponent<MeshFilter>();
@@ -20,6 +22,11 @@ public class Item : MonoBehaviour
     }
 
     private void Activate() {
+        StartCoroutine(ScartCanMergeCoroutine());
+    }
+
+    private IEnumerator ScartCanMergeCoroutine() { 
+        yield return new WaitForSeconds(waitStartMergeTime);
         canMerge = true;
     }
 

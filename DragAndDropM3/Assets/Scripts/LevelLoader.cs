@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] private int levelNum;
+    [SerializeField] private bool autoItemsVariants = true;
     [SerializeField] private int itemsVariants = 10;
     [SerializeField] private int levelType;
     [SerializeField] private List<GameObject> level = new List<GameObject>();
@@ -18,6 +19,10 @@ public class LevelLoader : MonoBehaviour
         //int levelMenuType = curLevelMenuType + i - 1;
         int levelMenuTypeDiv = curLevelMenuType / level.Count;
         int levelMenuTypeAfterCycle = curLevelMenuType - levelMenuTypeDiv * level.Count;
+
+        if (autoItemsVariants) {
+            itemsVariants = 4 + openedLevel * 2;
+        } 
 
         levelNum = ManagerGame.instance.GetCurLevel();
         GameObject l = Instantiate(level[levelMenuTypeAfterCycle]);
