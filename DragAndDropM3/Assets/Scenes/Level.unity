@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNum: 0
-  itemsVariants: 2
+  itemsVariants: 100
   levelType: 0
   level:
   - {fileID: 8392982018453593837, guid: 78568f812e6d9f54594e55ab308bab0e, type: 3}

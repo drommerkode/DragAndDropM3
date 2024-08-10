@@ -122,6 +122,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 06d49334b313a7e40be06a8cb802388d, type: 2}
   - {fileID: 11400000, guid: 331acc7c0d4d2d64bad1e299475e1f97, type: 2}
   - {fileID: 11400000, guid: 520e46c1f087b8047a45027de6183ef9, type: 2}
+  - {fileID: 11400000, guid: 3d216dee2d8e5c746b8f16e34681b50b, type: 2}
+  - {fileID: 11400000, guid: a03004d5114dd684d9993b9fc07ba41f, type: 2}
+  - {fileID: 11400000, guid: 990ac4ddd05809743b0d4a48f9386825, type: 2}
+  - {fileID: 11400000, guid: fcdf1b0466fbbfc40ac6567ed98643df, type: 2}
+  - {fileID: 11400000, guid: 3d4b5135adf642b4f82c6ea25974d52a, type: 2}
+  - {fileID: 11400000, guid: bcba44a9e8c5cb744828d31512c1c2d1, type: 2}
+  - {fileID: 11400000, guid: 984056440017484499bc208f3692a32d, type: 2}
+  - {fileID: 11400000, guid: 4a46edf15ff606d4cb03ad6a874e471a, type: 2}
+  - {fileID: 11400000, guid: 3a4bd88d52199414390d796cc0297366, type: 2}
   maxScoreMultiplier: 10
   minSpeedScoreMultiplier: 0.4
   speedScoreMultiplierAdd: 0.2
