@@ -60,7 +60,7 @@ public class GrabItModStatic : MonoBehaviour {
 		}
 		else {
 			if(Input.GetMouseButtonDown(0))	{
-				RaycastHit hitInfo;
+                RaycastHit hitInfo;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hitInfo, grabMaxDistance, maskItem)) {
 					if (hitInfo.collider.TryGetComponent<Rigidbody>(out Rigidbody rb)) {
