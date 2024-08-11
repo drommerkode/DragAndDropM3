@@ -398,6 +398,7 @@ public class ManagerUI : MonoBehaviour {
 
     public void GoResultMenu() {
         DeactiveAllUI();
+        DeactiveAllFade();
         buttonSkip.SetActive(!isLevelCompleted);
         buttonNext.SetActive(isLevelCompleted);
         halfFade.SetActive(true);
@@ -412,6 +413,7 @@ public class ManagerUI : MonoBehaviour {
 
     public void GoСompletedMenu() {
         DeactiveAllUI();
+        DeactiveAllFade();
         soundComplete.PlaySound();
         isLevelCompleted = true;
         completeMenu.SetActive(true);
@@ -420,6 +422,7 @@ public class ManagerUI : MonoBehaviour {
 
     public void GoFailedMenu() {
         DeactiveAllUI();
+        DeactiveAllFade();
         failedMenu.SetActive(true);
         menuState = MenuState.failedMenu;
     }
