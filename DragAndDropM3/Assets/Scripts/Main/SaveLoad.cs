@@ -29,7 +29,7 @@ public class SaveLoad : MonoBehaviour
         public bool mobileFirstStart = true;
 
         public float soundMusic = 0.4f;
-        public float soundSFX = 0.4f;
+        public float soundSFX = 0.8f;
 
         public float sensMouse = 0.5f;
         public float sensPad = 0.25f;

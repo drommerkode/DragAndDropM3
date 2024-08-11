@@ -8,7 +8,10 @@ using static SaveLoad;
 
 public class ManagerUI : MonoBehaviour {
 
+    [Header("Sounds")]
     [SerializeField] private SoundsForPlay soundPress;
+    [SerializeField] private SoundsForPlay soundComplete;
+    [SerializeField] private SoundsForPlay soundCoin;
 
     [Header("Menu links")]
     [SerializeField] private GameObject fullFade;
@@ -276,12 +279,14 @@ public class ManagerUI : MonoBehaviour {
         yield return new WaitForSeconds(scoreResultUpdateDelay);
         scoreResultAll.text = saveData.score.ToString();
         scoreReactResultAll.ReactUp();
+        soundCoin.PlaySound();
     }
 
     private IEnumerator AddScoreCurCoroutine() {
         yield return new WaitForSeconds(scoreResultUpdateDelay);
         scoreResultCur.text = saveData.lastScore.ToString();
         scoreReactResultCur.ReactUp();
+        soundCoin.PlaySound();
         UpdateResultScoreAll();
     }
     #endregion
@@ -407,6 +412,7 @@ public class ManagerUI : MonoBehaviour {
 
     public void GoСompletedMenu() {
         DeactiveAllUI();
+        soundComplete.PlaySound();
         isLevelCompleted = true;
         completeMenu.SetActive(true);
         menuState = MenuState.completeMenu;

@@ -57,56 +57,6 @@ MonoBehaviour:
   completeFailedTime: 2
   mainMusic: {fileID: 7005121175265839090}
   bootDelay: 0.1
-  loadingDelay: 1.5
-  layerMaskFinish:
-    serializedVersion: 2
-    m_Bits: 0
-  layerMaskCheck:
-    serializedVersion: 2
-    m_Bits: 0
-  layerMaskObstacle:
-    serializedVersion: 2
-    m_Bits: 128
-  destroyTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  cars:
-  - {fileID: 1835333029690928727, guid: d66b799b77f4a2542a9be23044d22cf7, type: 3}
-  - {fileID: 1835333029690928727, guid: 0d830c584c54a474c9bb25ae8d8041a2, type: 3}
-  - {fileID: 1835333029690928727, guid: c7d2e6a860f0cec43a584f8fe83b6d2a, type: 3}
-  - {fileID: 1835333029690928727, guid: 09a50c3f5ba67464699e1d38dd89a26e, type: 3}
-  carsOpenLevel: 00000000060000000b00000010000000
-  levels:
-  - {fileID: 7078708796376320154, guid: a095ea11a9917ee4ca364f61a8553330, type: 3}
-  - {fileID: 7078708796376320154, guid: bf2245557a5422542bbaf119594c7af7, type: 3}
-  - {fileID: 7078708796376320154, guid: 8cc8d9c40359e2d419aea4f4dec4ba34, type: 3}
-  - {fileID: 7078708796376320154, guid: 88ed9b45ba4ad484181d08d724486fe9, type: 3}
-  - {fileID: 7078708796376320154, guid: 217ece3e3ad39684f8ab16d0f537a620, type: 3}
-  - {fileID: 7078708796376320154, guid: e846de6f4c4ebde47b169dde456be69c, type: 3}
-  - {fileID: 7078708796376320154, guid: 83e2eb47bb671e940ad150380b13dac1, type: 3}
-  - {fileID: 7078708796376320154, guid: 380e84316593cd04497f1f4a8e731c74, type: 3}
-  - {fileID: 7078708796376320154, guid: 7f827f86fe25d5f438d4a816a2cd6095, type: 3}
-  - {fileID: 7078708796376320154, guid: 74b244f695cc88d45a6fc81cbea6c608, type: 3}
-  - {fileID: 7078708796376320154, guid: a319242bf1bc3bd49914451c3d536f52, type: 3}
-  - {fileID: 7078708796376320154, guid: ad9ac5b3cc4abb742b109df42f338a67, type: 3}
-  - {fileID: 7078708796376320154, guid: fcedf06eebbf28d4992b127093833f11, type: 3}
-  - {fileID: 7078708796376320154, guid: 420e164e579e9654e97b0b7f666d2188, type: 3}
-  - {fileID: 7078708796376320154, guid: e3049e57a0378fd47bfe97045beeac13, type: 3}
-  - {fileID: 7078708796376320154, guid: 3e7b5370f1e7b2f4ab7db1c1574f231f, type: 3}
-  - {fileID: 7078708796376320154, guid: f038c0eb90dda154a9ac843710a8ae13, type: 3}
-  - {fileID: 7078708796376320154, guid: b3f1896725bf73947b04a73e59244bb9, type: 3}
-  - {fileID: 7078708796376320154, guid: 616ce7b530205744d98d9227a8e077be, type: 3}
-  - {fileID: 7078708796376320154, guid: 753bf25c064d0294cb66a317d605050c, type: 3}
-  skyboxes:
-  - {fileID: 2100000, guid: fd7de2be94a1d1f45be0177854734bca, type: 2}
-  - {fileID: 2100000, guid: e0a21ebc98cee4e46bbae873ec0be703, type: 2}
-  - {fileID: 2100000, guid: 6eecb3bb77b3f7a43a504fceda3b0b5f, type: 2}
-  - {fileID: 2100000, guid: 0e51b3d2f16325549987d8d6070de3a1, type: 2}
-  fogColors:
-  - {r: 0.35686275, g: 0.7686275, b: 1, a: 0}
-  - {r: 0.3529412, g: 0.44705886, b: 0.5137255, a: 0}
-  - {r: 0.18039216, g: 0.105882354, b: 0.14901961, a: 0}
-  - {r: 1, g: 1, b: 1, a: 0}
 --- !u!114 &715099339081381799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +114,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5525357877691570359}
     m_Modifications:
+    - target: {fileID: 4029255529283835138, guid: 2632d76a9bc448d42aca32060607f7df, type: 3}
+      propertyPath: loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029255529283835138, guid: 2632d76a9bc448d42aca32060607f7df, type: 3}
+      propertyPath: soundType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029255529283835138, guid: 2632d76a9bc448d42aca32060607f7df, type: 3}
+      propertyPath: volumeMultiplier
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029255529283835138, guid: 2632d76a9bc448d42aca32060607f7df, type: 3}
+      propertyPath: sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4029255529283835138, guid: 2632d76a9bc448d42aca32060607f7df, type: 3}
+      propertyPath: sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f63131dc9b6577142b3dbd7df296d1f0, type: 3}
     - target: {fileID: 4302270514144589790, guid: 2632d76a9bc448d42aca32060607f7df, type: 3}
       propertyPath: m_Name
       value: Music
