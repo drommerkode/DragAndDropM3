@@ -260,10 +260,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1518517012869646764, guid: d8596ab066266af42987889cd550a520, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.00024414062
-      objectReference: {fileID: 0}
     - target: {fileID: 5201869234600047181, guid: d8596ab066266af42987889cd550a520, type: 3}
       propertyPath: m_Name
       value: ManagerUI
@@ -505,6 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNum: 0
+  autoItemsVariants: 1
   itemsVariants: 100
   levelType: 0
   level:
