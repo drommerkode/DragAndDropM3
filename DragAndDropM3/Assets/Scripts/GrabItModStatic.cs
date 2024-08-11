@@ -30,7 +30,7 @@ public class GrabItModStatic : MonoBehaviour {
     private Vector3 targetPos;
     private GameObject hitPointObject;
 	private Item curItem;
-	private Outline curOutline;
+	private SelectionOutlineController curOutline;
 
     private bool grabbing = false;
 	private bool isHingeJoint = false;
@@ -40,7 +40,9 @@ public class GrabItModStatic : MonoBehaviour {
         cameraTransform = base.transform;
 		hitPointObject = new GameObject("Point");
 		lineRenderer = GetComponent<LineRenderer>();
-	}
+        curOutline = GetComponent<SelectionOutlineController>();
+
+    }
 
 	void Update() {
 		if(grabbing) {
@@ -52,7 +54,7 @@ public class GrabItModStatic : MonoBehaviour {
 
 			if( Input.GetMouseButtonUp(0) ) {
                 curItem.graber = null;
-                curOutline.enabled = false;
+                curOutline.ClearNewTarget();
                 StopGrab();
             }
 		}
@@ -68,9 +70,7 @@ public class GrabItModStatic : MonoBehaviour {
                     if (hitInfo.collider.TryGetComponent<Item>(out curItem)) {
                         curItem.graber = this;
                     }
-                    if (hitInfo.collider.TryGetComponent<Outline>(out curOutline)) {
-                        curOutline.enabled = true;
-                    }
+					curOutline.SetNewTarget(hitInfo);
                 }
 			}
 		}

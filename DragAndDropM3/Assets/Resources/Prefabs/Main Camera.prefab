@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7513862898005522961}
   - component: {fileID: 7002276278061221048}
   - component: {fileID: 8920646139491527776}
+  - component: {fileID: 9162175419930109358}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -150,5 +151,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addPosition: 0.05
   changePosSpeed: 0.5
-  addFOV: 1
-  changeFOVSpeed: 10
+--- !u!114 &9162175419930109358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257191314700936859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e950cacae63d61a4e821edb397a8cd95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectionMode: 0
+  OutlineType: 0
+  AlphaMode: 0
+  OutlineColor: {r: 1, g: 1, b: 1, a: 1}
+  OccludedColor: {r: 0.5, g: 0.9, b: 0.3, a: 1}
+  OutlineWidth: 0.2
+  OutlineHardness: 1
+  maskForOutline:
+    serializedVersion: 2
+    m_Bits: 64
