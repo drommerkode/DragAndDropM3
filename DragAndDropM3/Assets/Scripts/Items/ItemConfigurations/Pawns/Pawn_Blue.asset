@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mesh: {fileID: 5595278827306460347, guid: e497bf78e51d74645a366e1f3dd1546c, type: 3}
   _scale: {x: 1, y: 1, z: 1}
+  _colliderScale: {x: 1, y: 1, z: 1}

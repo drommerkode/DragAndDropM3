@@ -8,5 +8,4 @@ public class Global : MonoBehaviour{
     public static string TAG_LevelLoader =          "LevelLoader";
     public static string TAG_LevelMenuCreate =      "LevelMenuCreate";
     
-
 }

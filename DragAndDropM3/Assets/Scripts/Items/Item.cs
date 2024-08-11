@@ -4,7 +4,6 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     private MeshFilter meshFilter;
-    private MeshCollider meshCollider;
 
     public ItemConfiguration itemConfiguration;
     [SerializeField] private LayerMask maskItem;
@@ -16,7 +15,6 @@ public class Item : MonoBehaviour
 
     private void Awake() {
         meshFilter = GetComponent<MeshFilter>();
-        meshCollider = GetComponent<MeshCollider>();
         ManagerGame.OnLevelLoaded.AddListener(Activate);
         Spawn();
     }
@@ -32,8 +30,17 @@ public class Item : MonoBehaviour
 
     public void Spawn() {
         meshFilter.mesh = itemConfiguration.mesh;
-        meshCollider.sharedMesh = itemConfiguration.mesh;
         transform.localScale = itemConfiguration.scale;
+        StartCoroutine(AddColliderCoroutine());
+    }
+
+    private IEnumerator AddColliderCoroutine() {
+        yield return null;
+        BoxCollider bc = gameObject.AddComponent<BoxCollider>();
+        //bc.size = bc.size * itemConfiguration.colliderScale;
+        bc.size = new Vector3(  bc.size.x * itemConfiguration.colliderScale.x, 
+                                bc.size.y * itemConfiguration.colliderScale.y, 
+                                bc.size.z * itemConfiguration.colliderScale.z);
     }
 
     private void OnCollisionEnter(Collision collision) {

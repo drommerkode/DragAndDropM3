@@ -95,7 +95,11 @@ public class ManagerLevel : MonoBehaviour
 
         if (curCount <= 0) {
             saveData.score += saveData.lastScore;
-            StopAllCoroutines();
+
+            if (scoreMultiplierCoroutine != null) {
+                StopCoroutine(scoreMultiplierCoroutine);
+            }
+
             managerUI.ScoreMultiplierShow(false);
             managerUI.HidePauseButton();
             StartCoroutine(EndLevelCoroutine());
