@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 using static SaveLoad;
@@ -56,6 +57,7 @@ public class ManagerUI : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI scoreResultCur;
     [SerializeField] private ScoreReact scoreReactResultCur;
     [SerializeField] private float scoreResultUpdateDelay = 0.5f;
+    private bool x2Geted;
 
     [Header("Score multiplier")]
     [SerializeField] private GameObject scoreMultiplier;
@@ -276,14 +278,14 @@ public class ManagerUI : MonoBehaviour {
     }
 
     private IEnumerator AddScoreAllCoroutine() { 
-        yield return new WaitForSeconds(scoreResultUpdateDelay);
+        yield return new WaitForSecondsRealtime(scoreResultUpdateDelay);
         scoreResultAll.text = saveData.score.ToString();
         scoreReactResultAll.ReactUp();
         soundCoin.PlaySound();
     }
 
     private IEnumerator AddScoreCurCoroutine() {
-        yield return new WaitForSeconds(scoreResultUpdateDelay);
+        yield return new WaitForSecondsRealtime(scoreResultUpdateDelay);
         scoreResultCur.text = saveData.lastScore.ToString();
         scoreReactResultCur.ReactUp();
         soundCoin.PlaySound();
@@ -396,7 +398,7 @@ public class ManagerUI : MonoBehaviour {
         //ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
     }
 
-    public void GoResultMenu() {
+    public void GoResultMenu(bool _afterReward) {
         DeactiveAllUI();
         DeactiveAllFade();
         buttonSkip.SetActive(!isLevelCompleted);
@@ -404,7 +406,7 @@ public class ManagerUI : MonoBehaviour {
         halfFade.SetActive(true);
         resultMenu.SetActive(true);
         menuState = MenuState.resultMenu;
-        scoreResultAll.text = (saveData.score - saveData.lastScore).ToString();
+        scoreResultAll.text = (saveData.score - (_afterReward ? 0 : saveData.lastScore)).ToString();
         scoreResultCur.text = saveData.lastScore.ToString();
         UpdateResultScoreAll();
         //ManagerGame.instance.ChangeCursorState(CursorLockMode.None);
@@ -535,7 +537,7 @@ public class ManagerUI : MonoBehaviour {
                 case MenuState.failedMenu:
                 case MenuState.resultMenu:
                     ManagerGame.instance.SetPause(true);
-                    GoResultMenu();
+                    GoResultMenu(true);
                     break;
                 default:
                     GoInGameMenu();

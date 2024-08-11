@@ -30,7 +30,7 @@ public class YandexFunc : MonoBehaviour {
     private static extern void ShowCommonAdv();
 
     [DllImport("__Internal")]
-    private static extern void ShowRewardAdv();
+    private static extern void ShowRewardAdv(int _rewardType);
 
     [DllImport("__Internal")]
     private static extern void RateGame();
@@ -143,7 +143,7 @@ public class YandexFunc : MonoBehaviour {
     public static void ShowRewardAdvYandex(int _rewardType) {
         Debug.Log("(Yandex) Show reward Adv");
 #if UNITY_WEBGL && !UNITY_EDITOR
-        //ShowRewardAdv(_rewardType);
+        ShowRewardAdv(_rewardType);
 #endif
     }
 

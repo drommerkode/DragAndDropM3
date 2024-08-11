@@ -35,7 +35,7 @@ mergeInto(LibraryManager.library, {
   },
 
   ShowRewardAdv: function(_rewardType){
-    showRewardedADV();
+    showRewardedADV(_rewardType);
   },
 
   RateGame: function(){

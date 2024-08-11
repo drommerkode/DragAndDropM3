@@ -46,7 +46,7 @@ public class ManagerGame : MonoBehaviour {
     public static UnityEvent<int> OnStartChangeLanguage = new UnityEvent<int>();
 
     public static UnityEvent OnLevelLoaded = new UnityEvent();
-    public static UnityEvent OnShowLevelResult = new UnityEvent();
+    public static UnityEvent<bool> OnShowLevelResult = new UnityEvent<bool>();
     public static UnityEvent OnLevelCompleted = new UnityEvent();
     public static UnityEvent OnLevelFailed = new UnityEvent();
 
@@ -115,7 +115,7 @@ public class ManagerGame : MonoBehaviour {
 
     private void LevelResult() {
         //SetPause(true);
-        OnShowLevelResult.Invoke();
+        OnShowLevelResult.Invoke(false);
     }
 
     public void LevelCompleted() {

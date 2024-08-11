@@ -12373,7 +12373,7 @@ PrefabInstance:
       objectReference: {fileID: 8613757765274115656}
     - target: {fileID: 7842765580951945660, guid: 7149986072351d549a6d9f3804be295f, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoExitToMainMenu
+      value: GoMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 7842765580951945660, guid: 7149986072351d549a6d9f3804be295f, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
