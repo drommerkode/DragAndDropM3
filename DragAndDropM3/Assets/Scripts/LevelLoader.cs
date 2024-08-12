@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelLoader : MonoBehaviour
-{
+public class LevelLoader : MonoBehaviour {
+    [SerializeField] private bool autoLevelNum = true;
     [SerializeField] private int levelNum;
     [SerializeField] private bool autoItemsVariants = true;
     [SerializeField] private int itemsVariants = 10;
@@ -13,18 +13,20 @@ public class LevelLoader : MonoBehaviour
 
     public void Init(ManagerUI _managerUI) {
 
-        int openedLevel = SaveLoad.saveData.levelsOpened;
-        int curLevelMenuType = (openedLevel - 1) / levelCountsPerWorld;
+        if (autoLevelNum) {
+            //levelNum = SaveLoad.saveData.levelsOpened;
+            levelNum = ManagerGame.instance.GetCurLevel();
+        }
+        int curLevelMenuType = (levelNum - 1) / levelCountsPerWorld;
 
         //int levelMenuType = curLevelMenuType + i - 1;
         int levelMenuTypeDiv = curLevelMenuType / level.Count;
         int levelMenuTypeAfterCycle = curLevelMenuType - levelMenuTypeDiv * level.Count;
 
         if (autoItemsVariants) {
-            itemsVariants = 4 + openedLevel * 2;
-        } 
+            itemsVariants = 4 + levelNum * 2;
+        }
 
-        levelNum = ManagerGame.instance.GetCurLevel();
         GameObject l = Instantiate(level[levelMenuTypeAfterCycle]);
         ManagerLevel mi = l.GetComponent<ManagerLevel>();
         mi.Init(itemsVariants, _managerUI);

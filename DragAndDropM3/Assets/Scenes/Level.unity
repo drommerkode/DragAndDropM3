@@ -496,9 +496,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49907e1da56162c4ab0259c0455fc9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNum: 0
+  autoLevelNum: 1
+  levelNum: 50
   autoItemsVariants: 1
-  itemsVariants: 100
+  itemsVariants: 40
   levelType: 0
   level:
   - {fileID: 8392982018453593837, guid: 78568f812e6d9f54594e55ab308bab0e, type: 3}
