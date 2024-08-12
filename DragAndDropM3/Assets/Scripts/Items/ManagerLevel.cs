@@ -19,6 +19,7 @@ public class ManagerLevel : MonoBehaviour
     [SerializeField] private List<ItemConfiguration> itemConfs = new List<ItemConfiguration>();
     private List<ItemConfiguration> spawnConfs = new List<ItemConfiguration>();
     private int curCount = 0;
+    private List<Item> items = new List<Item>();
 
     [Header("Multiplier")]
     [SerializeField] private int maxScoreMultiplier = 8;
@@ -67,6 +68,12 @@ public class ManagerLevel : MonoBehaviour
             itm.managerItem = this;
             itm.Spawn();
             curCount++;
+            Item findItem = items.Find(x => x.itemConfiguration == itm.itemConfiguration);
+            if (findItem != null) {
+                findItem.doubleItem = itm;
+                itm.doubleItem = findItem;
+            }
+            items.Add(itm);
         }
         ManagerGame.instance.LevelLoaded();
     }
