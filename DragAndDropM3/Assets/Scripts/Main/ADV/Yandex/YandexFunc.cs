@@ -125,7 +125,7 @@ public class YandexFunc : MonoBehaviour {
         if (isYandexAuth) {
 #if UNITY_WEBGL && !UNITY_EDITOR
             SetUserData(json);
-            //SetUserLiderScoreYandex(GameManager.instance.saveData.maxScore);
+            SetUserLiderScoreYandex(saveData.score);
 #endif
         }
     }
