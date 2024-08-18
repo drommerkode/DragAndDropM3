@@ -34,7 +34,7 @@ public class LevelLoader : MonoBehaviour {
         addRand = Mathf.Clamp(addRand, -maxAddRand, maxAddRand);
         addRand = Random.Range(-addRand, addRand);
         itemsVariants += (int)addRand;
-        itemsVariants = Mathf.Clamp(itemsVariants, 1, maxItemVariants + maxAddRand);
+        //itemsVariants = Mathf.Clamp(itemsVariants, 1, maxItemVariants + maxAddRand);
 
         GameObject l = Instantiate(level[levelMenuTypeAfterCycle]);
         ManagerLevel mi = l.GetComponent<ManagerLevel>();
