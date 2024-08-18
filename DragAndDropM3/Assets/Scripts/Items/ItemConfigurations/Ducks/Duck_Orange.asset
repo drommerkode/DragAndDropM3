@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd261dbafca290439bd4ed3ba8abb87, type: 3}
   m_Name: Duck_Orange
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 4558883114844263495, guid: 0edeaa21f0b1bec4ea1101e2bf326bcc, type: 3}
+  _mesh: {fileID: 4558883114844263495, guid: 79f01388e154a3746bc0a267a07845e1, type: 3}
   _scale: {x: 1, y: 1, z: 1}
   _colliderScale: {x: 1, y: 1, z: 1}

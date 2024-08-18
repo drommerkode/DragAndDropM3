@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd261dbafca290439bd4ed3ba8abb87, type: 3}
   m_Name: FishV1_1
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 5543818239769295627, guid: 81206395452220e4bb2119f6c00a0078, type: 3}
+  _mesh: {fileID: 5543818239769295627, guid: 32f630093cb262b4983dd38be0a78d17, type: 3}
   _scale: {x: 1, y: 1, z: 1}
+  _colliderScale: {x: 1, y: 1, z: 1}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd261dbafca290439bd4ed3ba8abb87, type: 3}
   m_Name: SharkV1
   m_EditorClassIdentifier: 
-  _mesh: {fileID: -4108424097152807243, guid: dcc4bc315d4ac244ca0069b1316ad6fc, type: 3}
+  _mesh: {fileID: -4108424097152807243, guid: ca38d4485fce19f4aa0d3d7bdd8b6cf2, type: 3}
   _scale: {x: 1, y: 1, z: 1}
   _colliderScale: {x: 1, y: 1, z: 1}

@@ -52,8 +52,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   partDestroy: {fileID: 7952833448784155246, guid: d1041ec2c1b79664d99dd0a920924fe8, type: 3}
+  minYPos: -5
   graber: {fileID: 0}
   managerItem: {fileID: 0}
+  doubleItem: {fileID: 0}
 --- !u!33 &1854795213745411902
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -82,7 +84,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7dbef12215f8c4e43b69a9d594dd9df1, type: 2}
+  - {fileID: 2100000, guid: dd4330fb196ead84ea9d14e6bbbe8ed5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

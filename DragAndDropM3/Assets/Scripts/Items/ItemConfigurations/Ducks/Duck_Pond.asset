@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd261dbafca290439bd4ed3ba8abb87, type: 3}
   m_Name: Duck_Pond
   m_EditorClassIdentifier: 
-  _mesh: {fileID: 1358394332415273515, guid: 0dfaa3a05da2b4f4e915e9c6ad3a1473, type: 3}
+  _mesh: {fileID: 1358394332415273515, guid: ad1a517ffd696ff47819ed3f79b707ef, type: 3}
   _scale: {x: 1, y: 1, z: 1}
   _colliderScale: {x: 1, y: 1, z: 1}
