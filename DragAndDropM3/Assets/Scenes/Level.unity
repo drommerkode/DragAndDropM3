@@ -496,10 +496,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49907e1da56162c4ab0259c0455fc9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoLevelNum: 0
-  levelNum: 15
+  autoLevelNum: 1
+  levelNum: 100
   autoItemsVariants: 1
-  itemsVariants: 40
+  itemsVariants: 100
+  maxItemVariants: 60
+  maxAddRand: 20
   levelType: 0
   level:
   - {fileID: 8392982018453593837, guid: 78568f812e6d9f54594e55ab308bab0e, type: 3}

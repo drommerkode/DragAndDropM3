@@ -16,10 +16,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 02fdecdbbf8987f48ad75ba69562559a, type: 2}
+    - target: {fileID: 6631493969892409937, guid: 4972c5f3a6ac94a4283d469cd606bcea, type: 3}
+      propertyPath: scrollSpeed.y
+      value: -0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6989710091361680231, guid: 4972c5f3a6ac94a4283d469cd606bcea, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 692d2067b969536449a01b6fe1cc53f4, type: 2}
+      objectReference: {fileID: 2100000, guid: 4e11cd8724ba07b479d29b6e2e5a5db4, type: 2}
     - target: {fileID: 8177085109009789297, guid: 4972c5f3a6ac94a4283d469cd606bcea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

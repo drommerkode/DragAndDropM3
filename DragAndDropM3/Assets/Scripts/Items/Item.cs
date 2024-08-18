@@ -18,7 +18,7 @@ public class Item : MonoBehaviour
     private void Awake() {
         meshFilter = GetComponent<MeshFilter>();
         ManagerGame.OnLevelLoaded.AddListener(Activate);
-        Spawn();
+        //Spawn();
     }
 
     private void Activate() {
