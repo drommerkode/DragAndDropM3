@@ -26,15 +26,15 @@ public class LevelLoader : MonoBehaviour {
         int levelMenuTypeAfterCycle = curLevelMenuType - levelMenuTypeDiv * level.Count;
 
         if (autoItemsVariants) {
-            itemsVariants = 4 + levelNum * 2;
+            itemsVariants = 4 + (int)(levelNum * 1.5f);
+
+            itemsVariants = Mathf.Clamp(itemsVariants, 1, maxItemVariants);
+            float addRand = levelNum * 0.2f;
+            addRand = Mathf.Clamp(addRand, -maxAddRand, maxAddRand);
+            addRand = Random.Range(-addRand, addRand);
+            itemsVariants += (int)addRand;
+            //itemsVariants = Mathf.Clamp(itemsVariants, 1, maxItemVariants + maxAddRand);
         }
-        
-        itemsVariants = Mathf.Clamp(itemsVariants, 1, maxItemVariants);
-        float addRand = levelNum * 0.2f;
-        addRand = Mathf.Clamp(addRand, -maxAddRand, maxAddRand);
-        addRand = Random.Range(-addRand, addRand);
-        itemsVariants += (int)addRand;
-        //itemsVariants = Mathf.Clamp(itemsVariants, 1, maxItemVariants + maxAddRand);
 
         GameObject l = Instantiate(level[levelMenuTypeAfterCycle]);
         ManagerLevel mi = l.GetComponent<ManagerLevel>();

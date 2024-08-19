@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoLevelNum: 1
-  levelNum: 100
+  levelNum: 29
   autoItemsVariants: 1
   itemsVariants: 100
   maxItemVariants: 60
